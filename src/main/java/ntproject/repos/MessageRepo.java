@@ -11,7 +11,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface MessageRepo extends CrudRepository<Message, Long> {
-
     @Query("select new ntproject.domain.dto.MessageDto(" +
             "   m, " +
             "   count(ml), " +

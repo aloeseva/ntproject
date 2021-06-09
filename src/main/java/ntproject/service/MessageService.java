@@ -14,7 +14,6 @@ public class MessageService {
     @Autowired
     private MessageRepo messageRepo;
 
-//    @Transactional(readOnly = true)
     public Page<MessageDto> messageList(Pageable pageable, String filter, User user) {
         if (filter != null && !filter.isEmpty()) {
             return messageRepo.findByTag(filter, pageable, user);
@@ -23,7 +22,6 @@ public class MessageService {
         }
     }
 
-//    @Transactional(readOnly = true)
     public Page<MessageDto> messageListForUser(Pageable pageable, User currentUser, User author) {
         return messageRepo.findByUser(pageable, author, currentUser);
     }

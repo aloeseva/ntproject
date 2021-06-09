@@ -53,6 +53,7 @@ public class MessageController {
             @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
             @AuthenticationPrincipal User user
     ) {
+
         Page<MessageDto> page = messageService.messageList(pageable, filter, user);
 
         model.addAttribute("page", page);

@@ -31,7 +31,6 @@ public class UserSevice implements UserDetailsService {
     private String hostname;
 
     @Override
-//    @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepo.findByUsername(username);
 
@@ -89,7 +88,6 @@ public class UserSevice implements UserDetailsService {
         return true;
     }
 
-//    @Transactional(readOnly = true)
     public List<User> findAll() {
         return userRepo.findAll();
     }
