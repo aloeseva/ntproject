@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS usr
 CREATE TABLE IF NOT EXISTS message
 (
     `id`       BIGINT        NOT NULL,
-    `filename` VARCHAR(255),
+#     `filename` VARCHAR(255),
     `tag`      VARCHAR(255),
     `text`     VARCHAR(2048) NOT NULL,
     `user_id`  BIGINT,

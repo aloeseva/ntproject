@@ -24,7 +24,7 @@ public class Message {
     @JoinColumn(name = "user_id")
     private User author;
 
-    private String filename;
+//    private String filename;
 
     @ManyToMany
     @JoinTable(
@@ -33,6 +33,14 @@ public class Message {
             inverseJoinColumns = { @JoinColumn(name = "user_id")}
     )
     private Set<User> likes = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "message_dislikes",
+            joinColumns = { @JoinColumn(name = "message_id") },
+            inverseJoinColumns = { @JoinColumn(name = "user_id")}
+    )
+    private Set<User> dislikes = new HashSet<>();
 
     public Message() {
     }
@@ -79,9 +87,9 @@ public class Message {
         this.tag = tag;
     }
 
-    public String getFilename() {
-        return filename;
-    }
+//    public String getFilename() {
+//        return filename;
+//    }
 
     public Set<User> getLikes() {
         return likes;
@@ -91,7 +99,15 @@ public class Message {
         this.likes = likes;
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
+    public Set<User> getDislikes() {
+        return dislikes;
     }
+
+    public void setDislikes(Set<User> dislikes) {
+        this.dislikes = dislikes;
+    }
+
+//    public void setFilename(String filename) {
+//        this.filename = filename;
+//    }
 }

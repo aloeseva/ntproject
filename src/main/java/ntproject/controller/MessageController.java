@@ -50,11 +50,36 @@ public class MessageController {
     public String main(
             @RequestParam(required = false, defaultValue = "") String filter,
             Model model,
-            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable,
             @AuthenticationPrincipal User user
     ) {
 
         Page<MessageDto> page = messageService.messageList(pageable, filter, user);
+//        if (user != null) {
+//            for (MessageDto messageDto :
+//                    page.getContent()) {
+//                if (user.getSubscriptions() != null) {
+//                    for (User tmpUser :
+//                            user.getSubscriptions()) {
+//                        if (messageDto.getAuthor().getId().equals(user.getId())) {
+//                            continue;
+//                        }
+//
+//                        if (!messageDto.getAuthor().getId().equals(tmpUser.getId())) {
+//                            page.getContent().remove(messageDto);
+//                        }
+//                    }
+//                } else {
+//                    if (!messageDto.getAuthor().getId().equals(user.getId())) {
+//                        page.getContent().remove(messageDto);
+//                    }
+//                }
+//            }
+//        } else {
+//            if (page != null) {
+//                page.getContent().clear();
+//            }
+//        }
 
         model.addAttribute("page", page);
         model.addAttribute("url", "/main");
@@ -70,8 +95,8 @@ public class MessageController {
             BindingResult bindingResult,
             Model model,
             @RequestParam(required = false, defaultValue = "") String filter,
-            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable,
-            @RequestParam("file") MultipartFile file
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable
+//            , @RequestParam("file") MultipartFile file
     ) throws IOException {
         message.setAuthor(user);
 
@@ -81,7 +106,9 @@ public class MessageController {
             model.mergeAttributes(errorsMap);
             model.addAttribute("message", message);
         } else {
-            saveFile(message, file);
+//            if (file != null) {
+//                saveFile(message, file);
+//            }
 
             model.addAttribute("message", null);
 
@@ -94,22 +121,22 @@ public class MessageController {
         return "main";
     }
 
-    private void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file) throws IOException {
-        if (file != null && !file.getOriginalFilename().isEmpty()) {
-            File uploadDir = new File(uploadPath);
-
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
-
-            String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + "." + file.getOriginalFilename();
-
-            file.transferTo(new File(uploadPath + "/" + resultFilename));
-
-            message.setFilename(resultFilename);
-        }
-    }
+//    private void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file) throws IOException {
+//        if (file != null && !file.getOriginalFilename().isEmpty()) {
+//            File uploadDir = new File(uploadPath);
+//
+//            if (!uploadDir.exists()) {
+//                uploadDir.mkdir();
+//            }
+//
+//            String uuidFile = UUID.randomUUID().toString();
+//            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+//
+//            file.transferTo(new File(uploadPath + "/" + resultFilename));
+//
+//            message.setFilename(resultFilename);
+//        }
+//    }
 
     @GetMapping("/user-messages/{author}")
     public String userMessges(
@@ -117,7 +144,7 @@ public class MessageController {
             @PathVariable User author,
             Model model,
             @RequestParam(required = false) Message message,
-            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC) Pageable pageable
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable
     ) {
         Page<MessageDto> page = messageService.messageListForUser(pageable, currentUser, author);
 
@@ -139,8 +166,8 @@ public class MessageController {
             @PathVariable Long user,
             @RequestParam("id") Message message,
             @RequestParam("text") String text,
-            @RequestParam("tag") String tag,
-            @RequestParam("file") MultipartFile file
+            @RequestParam("tag") String tag
+//            , @RequestParam("file") MultipartFile file
     ) throws IOException {
 
         if (message.getAuthor().equals(currentUser)) {
@@ -152,9 +179,9 @@ public class MessageController {
                 message.setTag(tag);
             }
 
-            if (file != null){
-                saveFile(message, file);
-            }
+//            if (file != null){
+//                saveFile(message, file);
+//            }
 
             messageRepo.save(message);
         }
@@ -170,11 +197,34 @@ public class MessageController {
             @RequestHeader(required = false) String referer
     ) {
         Set<User> likes = message.getLikes();
+        Set<User> dislikes = message.getDislikes();
 
-        if (likes.contains(currentUser)) {
-            likes.remove(currentUser);
-        } else {
+        return getString(currentUser, message, redirectAttributes, referer, likes, dislikes);
+    }
+
+    @GetMapping("/messages/{message}/dislike")
+    public String dislike(
+            @AuthenticationPrincipal User currentUser,
+            @PathVariable Message message,
+            RedirectAttributes redirectAttributes,
+            @RequestHeader(required = false) String referer
+    ) {
+        Set<User> likes = message.getLikes();
+        Set<User> dislikes = message.getDislikes();
+
+        return getString(currentUser, message, redirectAttributes, referer, dislikes, likes);
+    }
+
+    private String getString(@AuthenticationPrincipal User currentUser, @PathVariable Message message, RedirectAttributes redirectAttributes, @RequestHeader(required = false) String referer, Set<User> likes, Set<User> dislikes) {
+        if (!likes.contains(currentUser) && !dislikes.contains(currentUser)) {
             likes.add(currentUser);
+        } else {
+            if (dislikes.contains(currentUser)) {
+                dislikes.remove(currentUser);
+                likes.add(currentUser);
+            } else {
+                likes.remove(currentUser);
+            }
         }
 
         messageRepo.save(message);
@@ -182,8 +232,7 @@ public class MessageController {
         UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
 
         components.getQueryParams()
-                .entrySet()
-                .forEach(pair -> redirectAttributes.addAttribute(pair.getKey(), pair.getValue()));
+                .forEach(redirectAttributes::addAttribute);
 
         return "redirect:" + components.getPath();
     }

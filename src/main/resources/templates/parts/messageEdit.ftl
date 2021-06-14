@@ -61,6 +61,12 @@
                                 <hr>
 <#--                                <div class="form-group">-->
 <#--                                    <div class="custom-file">-->
+<#--                                        <input type="file" name="file" id="customFile" />-->
+<#--                                        <label class="custom-file-label" for="customFile">Choose file</label>-->
+<#--                                    </div>-->
+<#--                                </div>-->
+<#--                                <div class="form-group">-->
+<#--                                    <div class="custom-file">-->
 <#--                                        <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">-->
 <#--                                            <div class="profile-img-edit">-->
 

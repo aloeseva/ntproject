@@ -44,17 +44,17 @@
                         <p>${message.text}</p>
                         <i>#${message.tag}</i>
                     </div>
-                    <#if message.filename??>
-                        <div class="user-post">
-                            <div class="d-flex">
-                                <div class="col-md-6">
-                                    <img src="/img/${message.filename}"
-                                         alt="${message.filename}"
-                                         class="img-fluid rounded w-100">
-                                </div>
-                            </div>
-                        </div>
-                    </#if>
+<#--                    <#if message.filename??>-->
+<#--                        <div class="user-post">-->
+<#--                            <div class="d-flex">-->
+<#--                                <div class="col-md-6">-->
+<#--                                    <img src="/img/${message.filename}"-->
+<#--                                         alt="${message.filename}"-->
+<#--                                         class="img-fluid rounded w-100">-->
+<#--                                </div>-->
+<#--                            </div>-->
+<#--                        </div>-->
+<#--                    </#if>-->
                     <div class="comment-area mt-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="like-block position-relative d-flex align-items-center">
@@ -83,6 +83,24 @@
                                             <#--                                        <a class="dropdown-item" href="#">Sal Vidge</a>-->
                                             <#--                                        <a class="dropdown-item" href="#">Other</a>-->
                                             <#--                                    </div>-->
+                                        </div>
+                                    </div>
+
+                                    <div class="like-data">
+                                        <a class="col align-self-center" href="/messages/${message.id}/dislike">
+                                            <#if message.meDisliked>
+                                                <i class="fas fa-thumbs-down"></i>
+                                            <#else>
+                                                <i class="far fa-thumbs-down"></i>
+                                            </#if>
+                                        </a>
+                                    </div>
+                                    <div class="total-like-block ml-2 mr-3">
+                                        <div class="dropdown">
+                                                <span class="dropdown-toggle" data-toggle="dropdown"
+                                                      aria-haspopup="true" aria-expanded="false" role="button">
+                                                    ${message.dislikes} dislikes
+                                                </span>
                                         </div>
                                     </div>
                                 </div>
