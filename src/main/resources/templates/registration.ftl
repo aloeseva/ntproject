@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SocialV - Responsive Bootstrap 4 Admin Dashboard Template</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="https://img.icons8.com/material/24/4a90e2/gorilla.png"/>
+    <link rel="shortcut icon" href="/static/img/gorilla.png"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <!-- Typography CSS -->

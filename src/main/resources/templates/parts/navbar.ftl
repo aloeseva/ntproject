@@ -8,7 +8,7 @@
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <div class="iq-navbar-logo d-flex justify-content-between">
                 <a href="/">
-                    <img src="https://img.icons8.com/material/24/4a90e2/gorilla.png" class="img-fluid" alt="NTProject">
+                    <img src="/static/img/gorilla.png" class="img-fluid" alt="NTProject">
                     <span>NTP</span>
                 </a>
                 <div class="iq-menu-bt align-self-center">
