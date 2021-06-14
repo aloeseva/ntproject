@@ -1,3 +1,16 @@
+<#include "security.ftl">
+<#if message??>
+    <script>
+        $(document).ready(function () {
+            //this is just to verify that click works
+            $('.post-text.ml-3.w-100').click(function () {
+                console.log('clicked');
+            });
+
+            $('.post-text.ml-3.w-100').trigger('click');
+        });
+    </script>
+</#if>
 <div class="col-lg-8 offset-lg-2">
     <div class="col-sm-12">
         <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">
@@ -13,16 +26,6 @@
                                placeholder="Write something here..." style="border:none;">
                     </form>
                 </div>
-                <#--                <hr>-->
-                <#--                <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">-->
-                <#--                    <li class="iq-bg-primary rounded p-2 pointer mr-3">-->
-                <#--                        <input type="file" name="file" id="customFile" />-->
-                <#--                        <a href="#"></a>-->
-                <#--                        <img src="/static/img/07.png" alt="icon" class="img-fluid"> Photo-->
-                <#--                    </li>-->
-
-                <#--&lt;#&ndash;                    <label class="custom-file-label" for="customFile">Choose file</label>&ndash;&gt;-->
-                <#--                </ul>-->
             </div>
             <div class="modal fade <#if message??>show</#if>" id="post-modal" tabindex="-1" role="dialog"
                  aria-labelledby="post-modalLabel" aria-hidden="true" style="display: none;">
@@ -30,8 +33,9 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="post-modalLabel">Create Post</h5>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i
-                                        class="ri-close-fill"></i></button>
+                            <a class="btn btn-secondary" href="/user-messages/${currentUserId}" role="button">
+                                <i class="ri-close-fill"></i>
+                            </a>
                         </div>
                         <div class="modal-body">
                             <form method="post" <#if !message??> action="/main" </#if> enctype="multipart/form-data">
@@ -55,18 +59,24 @@
                                     </#if>
                                 </div>
                                 <hr>
-                                <div class="form-group">
-                                    <div class="custom-file">
-                                        <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">
-                                            <li class="iq-bg-primary rounded p-2 pointer mr-3">
-                                                <input type="file" name="file" id="customFile"/>
-                                                <#--                                                <label class="custom-file-label" for="customFile">Choose file</label>-->
-                                            </li>
-                                        </ul>
-                                        <#--                                        <input type="file" name="file" id="customFile"/>-->
-                                        <#--                                        <label class="custom-file-label" for="customFile">Choose file</label>-->
-                                    </div>
-                                </div>
+<#--                                <div class="form-group">-->
+<#--                                    <div class="custom-file">-->
+<#--                                        <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">-->
+<#--                                            <div class="profile-img-edit">-->
+
+<#--                                                <img class="profile-pic" src="/static/img/user.png" alt="profile-pic">-->
+<#--                                                <div class="p-image">-->
+<#--                                                    <i class="ri-image-line upload-button"></i>-->
+<#--                                                    <input class="file-upload" type="file" name="file" accept="image/*"/>-->
+<#--                                                    &lt;#&ndash;                                                    <img src="/static/img/07.png" alt="icon" class="img-fluid">&ndash;&gt;-->
+<#--                                                </div>-->
+<#--                                            </div>-->
+<#--                                            &lt;#&ndash;                                            <li class="iq-bg-primary rounded p-2 pointer mr-3">&ndash;&gt;-->
+<#--                                            &lt;#&ndash;                                                                                                <input type="file" name="file" id="customFile" class="iq-bg-primary rounded p-2 pointer mr-3"/>&ndash;&gt;-->
+<#--                                            &lt;#&ndash;                                            </li>&ndash;&gt;-->
+<#--                                        </ul>-->
+<#--                                    </div>-->
+<#--                                </div>-->
                                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                 <input type="hidden" name="id" value="<#if message??>${message.id}</#if>"/>
                                 <br>

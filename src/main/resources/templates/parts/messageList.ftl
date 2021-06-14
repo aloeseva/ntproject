@@ -28,7 +28,7 @@
                                                 <div class="d-flex align-items-top">
                                                     <div class="icon font-size-20"><i class="ri-save-line"></i>
                                                     </div>
-                                                    <div class="data ml-2">
+                                                    <div class="data ml-2" >
                                                         <h6>Edit</h6>
                                                         <p class="mb-0">Edit your post</p>
                                                     </div>

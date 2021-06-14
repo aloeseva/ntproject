@@ -14,6 +14,9 @@
                         <a href="/user-messages/${currentUserId}" class="iq-waves-effect"><i
                                     class="las la-user"></i><span>Profile</span></a>
                     </li>
+                    <li>
+                        <a href="/user/subscribers/${currentUserId}/list" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Friend Lists</span></a>
+                    </li>
                 </#if>
             </ul>
         </nav>

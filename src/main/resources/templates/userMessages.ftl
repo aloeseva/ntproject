@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page "/user-messages/${userChannel.id}" true>
+<@c.page "/user-messages/${userChannel.id}" true false>
 
     <div class="col-sm-8 offset-sm-2">
         <div class="iq-card">
