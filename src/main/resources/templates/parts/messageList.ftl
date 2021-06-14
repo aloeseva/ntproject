@@ -3,11 +3,11 @@
 
 <@p.pager page url />
 
-<div class="col-lg-8 row m-0 p-0" data-id="${message.id}>
-    <div class="col-sm-12">
+<div class="col-lg-8 offset-lg-2">
+    <div class=" col-sm-12">
         <#list page.content as message>
-            <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-                <div class="iq-card-body">
+            <div class="iq-card iq-card-block iq-card-stretch iq-card-height" data-id="${message.id}">
+                <div class="iq-card-body" data-id="${message.id}">
                     <div class="user-post-data">
                         <div class="d-flex flex-wrap">
                             <div class="media-support-info mt-2">
@@ -55,6 +55,97 @@
                             </div>
                         </div>
                     </#if>
+                    <div class="comment-area mt-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="like-block position-relative d-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <div class="like-data">
+                                        <a class="col align-self-center" href="/messages/${message.id}/like">
+                                            <#if message.meLiked>
+                                                <i class="fas fa-heart"></i>
+                                            <#else>
+                                                <i class="far fa-heart"></i>
+                                            </#if>
+                                        </a>
+                                    </div>
+                                    <div class="total-like-block ml-2 mr-3">
+                                        <div class="dropdown">
+                                                <span class="dropdown-toggle" data-toggle="dropdown"
+                                                      aria-haspopup="true" aria-expanded="false" role="button">
+                                                    ${message.likes} Likes
+                                                </span>
+                                            <#--                                    <div class="dropdown-menu">-->
+                                            <#--                                        <a class="dropdown-item" href="#">Max Emum</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Bill Yerds</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Hap E. Birthday</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Tara Misu</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Midge Itz</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Sal Vidge</a>-->
+                                            <#--                                        <a class="dropdown-item" href="#">Other</a>-->
+                                            <#--                                    </div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="total-comment-block">
+                                    <div class="dropdown">
+                                             <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                   aria-expanded="false" role="button">
+                                             0 Comment
+                                             </span>
+                                        <#--                                <div class="dropdown-menu">-->
+                                        <#--                                    <a class="dropdown-item" href="#">Max Emum</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Bill Yerds</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Hap E. Birthday</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Tara Misu</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Midge Itz</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Sal Vidge</a>-->
+                                        <#--                                    <a class="dropdown-item" href="#">Other</a>-->
+                                        <#--                                </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <#--                <ul class="post-comments p-0 m-0">-->
+                        <#--                    <li class="mb-2">-->
+                        <#--                        <div class="d-flex flex-wrap">-->
+                        <#--                            <div class="user-img">-->
+                        <#--                                <img src="images/user/02.jpg" alt="userimg"-->
+                        <#--                                     class="avatar-35 rounded-circle img-fluid">-->
+                        <#--                            </div>-->
+                        <#--                            <div class="comment-data-block ml-3">-->
+                        <#--                                <h6>Monty Carlo</h6>-->
+                        <#--                                <p class="mb-0">Lorem ipsum dolor sit amet</p>-->
+                        <#--                                <div class="d-flex flex-wrap align-items-center comment-activity">-->
+                        <#--                                    <a href="javascript:void();">like</a>-->
+                        <#--                                    <a href="javascript:void();">reply</a>-->
+                        <#--                                    <a href="javascript:void();">translate</a>-->
+                        <#--                                    <span> 5 min </span>-->
+                        <#--                                </div>-->
+                        <#--                            </div>-->
+                        <#--                        </div>-->
+                        <#--                    </li>-->
+                        <#--                    <li>-->
+                        <#--                        <div class="d-flex flex-wrap">-->
+                        <#--                            <div class="user-img">-->
+                        <#--                                <img src="images/user/03.jpg" alt="userimg"-->
+                        <#--                                     class="avatar-35 rounded-circle img-fluid">-->
+                        <#--                            </div>-->
+                        <#--                            <div class="comment-data-block ml-3">-->
+                        <#--                                <h6>Paul Molive</h6>-->
+                        <#--                                <p class="mb-0">Lorem ipsum dolor sit amet</p>-->
+                        <#--                                <div class="d-flex flex-wrap align-items-center comment-activity">-->
+                        <#--                                    <a href="javascript:void();">like</a>-->
+                        <#--                                    <a href="javascript:void();">reply</a>-->
+                        <#--                                    <a href="javascript:void();">translate</a>-->
+                        <#--                                    <span> 5 min </span>-->
+                        <#--                                </div>-->
+                        <#--                            </div>-->
+                        <#--                        </div>-->
+                        <#--                    </li>-->
+                        <#--                </ul>-->
+                    </div>
+
                 </div>
             </div>
         <#else>

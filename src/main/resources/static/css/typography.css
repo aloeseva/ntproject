@@ -37,19 +37,19 @@ NOTE: This file contains the styling for responsive Template.
 /*---------------------------------------------------------------------
 import Css
 -----------------------------------------------------------------------*/
-@import url("/static/css/variable.css");
-@import url("/static/css/owl.carousel.min.css");
-@import url("/static/css/dripicons.css");
-@import url("/static/css/remixicon.css");
-@import url("/static/css/fontawesome.css");
-@import url("/static/css/line-awesome.min.css");
-@import url("/static/css/ionicons.min.css");
-@import url("/static/css/slick.css");
-@import url("/static/css/slick-theme.css");
-@import url("/static/css/Chart.min.css");
-@import url("/static/css/select2.min.css");
-@import url("/static/css/magnific-popup.css");
-@import url("/static/css/animate.css");
+@import url("/static/css/variabl.css");
+@import url("/static/css/owl.carousel.mi.css");
+@import url("/static/css/dripicon.css");
+@import url("/static/css/remixico.css");
+@import url("/static/css/fontawesom.css");
+@import url("/static/css/line-awesome.mi.css");
+@import url("/static/css/ionicons.mi.css");
+@import url("/static/css/slic.css");
+@import url("/static/css/slick-them.css");
+@import url("/static/css/Chart.mi.css");
+@import url("/static/css/select2.mi.css");
+@import url("/static/css/magnific-popu.css");
+@import url("/static/css/animat.css");
 
 /*---------------------------------------------------------------------
 Font
@@ -100,7 +100,7 @@ th { }
 loading
 ------------------------------------------------*/
 #loading { background-color: var(--iq-dark-bg); height: 100%; width: 100%;  position: fixed; margin-top: 0px; top: 0px; left: 0px; bottom: 0px; overflow: hidden !important; right: 0px; z-index: 999999;}
-#loading-center {background: url(../../img/image_4.png) no-repeat scroll center center;background-size: 10%; width: 100%; height: 100%; position: relative; }
+#loading-center {background: url(/icon/image_4.png) no-repeat scroll center center;background-size: 10%; width: 100%; height: 100%; position: relative; }
 .loader { width: 3em; height: 3em; margin: auto; left: 0; right: 0; top: 0; bottom: 0; position: absolute; }
 @-webkit-keyframes rotation {
   0% { -webkit-transform: rotateY(0deg); }

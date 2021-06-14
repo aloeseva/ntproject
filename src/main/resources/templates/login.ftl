@@ -1,12 +1,13 @@
 <#import "parts/login.ftl" as l>
 
 <!doctype html>
+
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SocialV - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>NTProject</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/material/24/4a90e2/gorilla.png"/>
     <!-- Bootstrap CSS -->
@@ -16,39 +17,39 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="/static/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="/static/css/responsive.css">
+    <link rel="stylesheet" href="/static/css/responsiv.css">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.mi.js"></script>
+    <script src="/static/js/popper.mi.js"></script>
+    <script src="/static/js/bootstrap.mi.js"></script>
     <!-- Appear JavaScript -->
-    <script src="/static/js/jquery.appear.js"></script>
+    <script src="/static/js/jquery.appea.js"></script>
     <!-- Countdown JavaScript -->
-    <script src="/static/js/countdown.min.js"></script>
+    <script src="/static/js/countdown.mi.js"></script>
     <!-- Counterup JavaScript -->
-    <script src="/static/js/waypoints.min.js"></script>
-    <script src="/static/js/jquery.counterup.min.js"></script>
+    <script src="/static/js/waypoints.mi.js"></script>
+    <script src="/static/js/jquery.counterup.mi.js"></script>
     <!-- Wow JavaScript -->
-    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/wow.mi.js"></script>
     <!-- lottie JavaScript -->
-    <script src="/static/js/lottie.js"></script>
+    <script src="/static/js/lotti.js"></script>
     <!-- Apexcharts JavaScript -->
-    <script src="/static/js/apexcharts.js"></script>
+    <script src="/static/js/apexchart.js"></script>
     <!-- Slick JavaScript -->
-    <script src="/static/js/slick.min.js"></script>
+    <script src="/static/js/slick.mi.js"></script>
     <!-- Select2 JavaScript -->
-    <script src="/static/js/select2.min.js"></script>
+    <script src="/static/js/select2.mi.js"></script>
     <!-- Owl Carousel JavaScript -->
-    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/owl.carousel.mi.js"></script>
     <!-- Magnific Popup JavaScript -->
-    <script src="/static/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/js/jquery.magnific-popup.mi.js"></script>
     <!-- Smooth Scrollbar JavaScript -->
-    <script src="/static/js/smooth-scrollbar.js"></script>
+    <script src="/static/js/smooth-scrollba.js"></script>
     <!-- Chart Custom JavaScript -->
-    <script src="/static/js/chart-custom.js"></script>
+    <script src="/static/js/chart-custo.js"></script>
     <!-- Custom JavaScript -->
-    <script src="/static/js/custom.js"></script>
+    <script src="/static/js/custo.js"></script>
 </head>
 <body>
 <!-- loader Start -->
@@ -72,7 +73,7 @@
                 <div class="sign-in-detail text-white">
                     <a class="sign-in-logo mb-5" href="/"><img src="/icon/image_4.png" class="img-fluid" alt="logo"></a>
                     <div class="item">
-                        <img src="images/login/1.png" class="img-fluid mb-4" alt="logo">
+                        <img src="/static/img/login.png" class="img-fluid mb-4" alt="logo">
                         <h4 class="mb-1 text-white">Manage your orders</h4>
                         <p>It is a long established fact that a reader will be distracted by the readable
                             content.</p>

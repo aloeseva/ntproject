@@ -2,20 +2,31 @@
 <#import "login.ftl" as l>
 
 <!-- TOP Nav Bar -->
+<#macro navbar path isMessagePage>
 <div class="iq-top-navbar">
     <div class="iq-navbar-custom">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <div class="iq-navbar-logo d-flex justify-content-between">
                 <a href="/">
                     <img src="https://img.icons8.com/material/24/4a90e2/gorilla.png" class="img-fluid" alt="NTProject">
-                    <span>NTProject</span>
+                    <span>NTP</span>
                 </a>
                 <div class="iq-menu-bt align-self-center">
                     <div class="wrapper-menu">
-                        <div class="main-circle"><i class="ri-menu-line"></i></div>
+                        <div class="main-circle">
+                            <i class="ri-menu-line"></i>
+                        </div>
                     </div>
                 </div>
             </div>
+            <#if isMessagePage>
+                <div class="iq-search-bar">
+                    <form method="get" action="${path}" class="searchbox">
+                        <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Type here to search...">
+                        <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                    </form>
+                </div>
+            </#if>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-label="Toggle navigation">
@@ -26,7 +37,7 @@
                     <#if user??>
                         <li>
                             <a href="/user-messages/${currentUserId}" class="iq-waves-effect d-flex align-items-center">
-                                <img src="/img/image_4.png" class="img-fluid rounded-circle mr-3" alt="user">
+                                <img src="/static/img/user.png" class="img-fluid rounded-circle mr-3" alt="user">
                                 <div class="caption">
                                     <h6 class="mb-0 line-height">Profile</h6>
                                 </div>
@@ -109,6 +120,7 @@
         </nav>
     </div>
 </div>
+</#macro>
 <!-- TOP Nav Bar END -->
 
 <#--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->

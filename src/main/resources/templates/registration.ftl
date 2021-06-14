@@ -10,13 +10,46 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/material/24/4a90e2/gorilla.png"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <!-- Typography CSS -->
-    <link rel="stylesheet" href="/css/typography.css">
+    <link rel="stylesheet" href="/static/css/typography.css">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/static/css/responsiv.css">
+    <!-- Optional JavaScript -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/js/jquery.mi.js"></script>
+    <script src="/static/js/popper.mi.js"></script>
+    <script src="/static/js/bootstrap.mi.js"></script>
+    <!-- Appear JavaScript -->
+    <script src="/static/js/jquery.appea.js"></script>
+    <!-- Countdown JavaScript -->
+    <script src="/static/js/countdown.mi.js"></script>
+    <!-- Counterup JavaScript -->
+    <script src="/static/js/waypoints.mi.js"></script>
+    <script src="/static/js/jquery.counterup.mi.js"></script>
+    <!-- Wow JavaScript -->
+    <script src="/static/js/wow.mi.js"></script>
+    <!-- lottie JavaScript -->
+    <script src="/static/js/lotti.js"></script>
+    <!-- Apexcharts JavaScript -->
+    <script src="/static/js/apexchart.js"></script>
+    <!-- Slick JavaScript -->
+    <script src="/static/js/slick.mi.js"></script>
+    <!-- Select2 JavaScript -->
+    <script src="/static/js/select2.mi.js"></script>
+    <!-- Owl Carousel JavaScript -->
+    <script src="/static/js/owl.carousel.mi.js"></script>
+    <!-- Magnific Popup JavaScript -->
+    <script src="/static/js/jquery.magnific-popup.mi.js"></script>
+    <!-- Smooth Scrollbar JavaScript -->
+    <script src="/static/js/smooth-scrollba.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="/static/js/chart-custo.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/custo.js"></script>
 </head>
 <body>
 <!-- loader Start -->
@@ -40,7 +73,7 @@
                 <div class="sign-in-detail text-white">
                     <a class="sign-in-logo mb-5" href="/"><img src="/icon/image_4.png" class="img-fluid" alt="logo"></a>
                     <div class="item">
-                        <img src="images/login/1.png" class="img-fluid mb-4" alt="logo">
+                        <img src="/static/img/login.png" class="img-fluid mb-4" alt="logo">
                         <h4 class="mb-1 text-white">Manage your orders</h4>
                         <p>It is a long established fact that a reader will be distracted by the readable
                             content.</p>
@@ -57,37 +90,37 @@
     </div>
 </section>
 <!-- Sign in END -->
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="/js/jquery.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<!-- Appear JavaScript -->
-<script src="/js/jquery.appear.js"></script>
-<!-- Countdown JavaScript -->
-<script src="/js/countdown.min.js"></script>
-<!-- Counterup JavaScript -->
-<script src="/js/waypoints.min.js"></script>
-<script src="/js/jquery.counterup.min.js"></script>
-<!-- Wow JavaScript -->
-<script src="/js/wow.min.js"></script>
-<!-- lottie JavaScript -->
-<script src="/js/lottie.js"></script>
-<!-- Apexcharts JavaScript -->
-<script src="/js/apexcharts.js"></script>
-<!-- Slick JavaScript -->
-<script src="/js/slick.min.js"></script>
-<!-- Select2 JavaScript -->
-<script src="/js/select2.min.js"></script>
-<!-- Owl Carousel JavaScript -->
-<script src="/js/owl.carousel.min.js"></script>
-<!-- Magnific Popup JavaScript -->
-<script src="/js/jquery.magnific-popup.min.js"></script>
-<!-- Smooth Scrollbar JavaScript -->
-<script src="/js/smooth-scrollbar.js"></script>
-<!-- Chart Custom JavaScript -->
-<script src="/js/chart-custom.js"></script>
-<!-- Custom JavaScript -->
-<script src="/js/custom.js"></script>
+<#--<!-- Optional JavaScript &ndash;&gt;-->
+<#--<!-- jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
+<#--<script src="/js/jquery.mi.js"></script>-->
+<#--<script src="/js/popper.mi.js"></script>-->
+<#--<script src="/js/bootstrap.mi.js"></script>-->
+<#--<!-- Appear JavaScript &ndash;&gt;-->
+<#--<script src="/js/jquery.appea.js"></script>-->
+<#--<!-- Countdown JavaScript &ndash;&gt;-->
+<#--<script src="/js/countdown.mi.js"></script>-->
+<#--<!-- Counterup JavaScript &ndash;&gt;-->
+<#--<script src="/js/waypoints.mi.js"></script>-->
+<#--<script src="/js/jquery.counterup.mi.js"></script>-->
+<#--<!-- Wow JavaScript &ndash;&gt;-->
+<#--<script src="/js/wow.mi.js"></script>-->
+<#--<!-- lottie JavaScript &ndash;&gt;-->
+<#--<script src="/js/lotti.js"></script>-->
+<#--<!-- Apexcharts JavaScript &ndash;&gt;-->
+<#--<script src="/js/apexchart.js"></script>-->
+<#--<!-- Slick JavaScript &ndash;&gt;-->
+<#--<script src="/js/slick.mi.js"></script>-->
+<#--<!-- Select2 JavaScript &ndash;&gt;-->
+<#--<script src="/js/select2.mi.js"></script>-->
+<#--<!-- Owl Carousel JavaScript &ndash;&gt;-->
+<#--<script src="/js/owl.carousel.mi.js"></script>-->
+<#--<!-- Magnific Popup JavaScript &ndash;&gt;-->
+<#--<script src="/js/jquery.magnific-popup.mi.js"></script>-->
+<#--<!-- Smooth Scrollbar JavaScript &ndash;&gt;-->
+<#--<script src="/js/smooth-scrollba.js"></script>-->
+<#--<!-- Chart Custom JavaScript &ndash;&gt;-->
+<#--<script src="/js/chart-custo.js"></script>-->
+<#--<!-- Custom JavaScript &ndash;&gt;-->
+<#--<script src="/js/custo.js"></script>-->
 </body>
 </html>

@@ -27,4 +27,4 @@ am4internal_webpackJsonp(["ab45"], {
         window.am4themes_animated = a
     }
 }, ["lhmh"]);
-//# sourceMappingURL=animated.js.map
+//# sourceMappingURL=animate.js.map

@@ -142,6 +142,7 @@ public class MessageController {
             @RequestParam("tag") String tag,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
+
         if (message.getAuthor().equals(currentUser)) {
             if (!StringUtils.isEmpty(text)) {
                 message.setText(text);
@@ -151,7 +152,9 @@ public class MessageController {
                 message.setTag(tag);
             }
 
-            saveFile(message, file);
+            if (file != null){
+                saveFile(message, file);
+            }
 
             messageRepo.save(message);
         }
@@ -173,6 +176,8 @@ public class MessageController {
         } else {
             likes.add(currentUser);
         }
+
+        messageRepo.save(message);
 
         UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
 

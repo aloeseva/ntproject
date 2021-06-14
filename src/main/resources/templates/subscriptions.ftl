@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page>
+<@c.page "#" false>
 <h3>${userChannel.username}</h3>
 <div>${type}</div>
 <ul class="list-group">

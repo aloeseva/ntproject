@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page>
+<@c.page "#" false>
 <h5>${username}</h5>
 ${message!}
 <form method="post">

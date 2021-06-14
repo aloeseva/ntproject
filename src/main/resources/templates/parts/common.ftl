@@ -1,4 +1,6 @@
-<#macro page>
+<#import "navbar.ftl" as n>
+
+<#macro page path isMessagePage>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -10,66 +12,63 @@
         <!-- Favicon -->
         <link rel="shortcut icon" href="https://img.icons8.com/material/24/4a90e2/gorilla.png"/>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
         <!-- Typography CSS -->
-        <link rel="stylesheet" href="/css/typography.css">
+        <link rel="stylesheet" href="/static/css/typography.css">
         <!-- Style CSS -->
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/static/css/style.css">
         <!-- Responsive CSS -->
-        <link rel="stylesheet" href="/css/responsive.css">
+        <link rel="stylesheet" href="/static/css/responsiv.css">
 
-        <#--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-        <!-- Bootstrap CSS -->
-        <#--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />-->
-        <#--    <link rel="stylesheet" href="/static/style.css" />-->
-        <script src="https://www.google.com/recaptcha/api.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+
+        <#--        <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>-->
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/popper.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="/static/js/jquery.mi.js"></script>
+        <script src="/static/js/popper.mi.js"></script>
+        <script src="/static/js/bootstrap.mi.js"></script>
         <!-- Appear JavaScript -->
-        <script src="/js/jquery.appear.js"></script>
+        <script src="/static/js/jquery.appea.js"></script>
         <!-- Countdown JavaScript -->
-        <script src="/js/countdown.min.js"></script>
+        <script src="/static/js/countdown.mi.js"></script>
         <!-- Counterup JavaScript -->
-        <script src="/js/waypoints.min.js"></script>
-        <script src="/js/jquery.counterup.min.js"></script>
+        <script src="/static/js/waypoints.mi.js"></script>
+        <script src="/static/js/jquery.counterup.mi.js"></script>
         <!-- Wow JavaScript -->
-        <script src="/js/wow.min.js"></script>
+        <script src="/static/js/wow.mi.js"></script>
         <!-- Apexcharts JavaScript -->
-        <script src="/js/apexcharts.js"></script>
+        <script src="/static/js/apexchart.js"></script>
         <!-- Slick JavaScript -->
-        <script src="/js/slick.min.js"></script>
+        <script src="/static/js/slick.mi.js"></script>
         <!-- Select2 JavaScript -->
-        <script src="/js/select2.min.js"></script>
+        <script src="/static/js/select2.mi.js"></script>
         <!-- Owl Carousel JavaScript -->
-        <script src="/js/owl.carousel.min.js"></script>
+        <script src="/static/js/owl.carousel.mi.js"></script>
         <!-- Magnific Popup JavaScript -->
-        <script src="/js/jquery.magnific-popup.min.js"></script>
+        <script src="/static/js/jquery.magnific-popup.mi.js"></script>
         <!-- Smooth Scrollbar JavaScript -->
-        <script src="/js/smooth-scrollbar.js"></script>
+        <script src="/static/js/smooth-scrollba.js"></script>
         <!-- lottie JavaScript -->
-        <script src="/js/lottie.js"></script>
+        <script src="/static/js/lotti.js"></script>
         <!-- am core JavaScript -->
-        <script src="/js/core.js"></script>
+        <script src="/static/js/cor.js"></script>
         <!-- am charts JavaScript -->
-        <script src="/js/charts.js"></script>
+        <script src="/static/js/chart.js"></script>
         <!-- am animated JavaScript -->
-        <script src="/js/animated.js"></script>
+        <script src="/static/js/animate.js"></script>
         <!-- am kelly JavaScript -->
-        <script src="/js/kelly.js"></script>
+        <script src="/static/js/kell.js"></script>
         <!-- am maps JavaScript -->
-        <script src="/js/maps.js"></script>
+        <script src="/static/js/map.js"></script>
         <!-- am worldLow JavaScript -->
-        <script src="/js/worldLow.js"></script>
+        <script src="/static/js/worldLo.js"></script>
         <!-- Chart Custom JavaScript -->
-        <script src="/js/chart-custom.js"></script>
+        <script src="/static/js/chart-custo.js"></script>
         <!-- Custom JavaScript -->
-        <script src="/js/custom.js"></script>
+        <script src="/static/js/custo.js"></script>
 
         <!-- Optional JavaScript -->
         <style>
@@ -79,10 +78,22 @@
             }
         </style>
     </head>
+
     <body class="right-column-fixed">
-    <#include "navbar.ftl">
+    <div id="loading">
+        <div id="loading-center">
+        </div>
+    </div>
+    <@n.navbar path isMessagePage />
+    <#include "sidebar.ftl">
     <div class="wrapper">
+        <div id="content-page" class="content-page">
+            <div class="container">
+                <div class="row">
         <#nested>
+                </div>
+            </div>
+        </div>
     </div>
 
     </body>
