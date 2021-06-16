@@ -3,10 +3,25 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(81020854, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/81020854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SocialV - Responsive Bootstrap 4 Admin Dashboard Template</title>
+    <title>NTProject</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/static/img/gorila.png"/>
     <!-- Bootstrap CSS -->
@@ -74,9 +89,8 @@
                     <a class="sign-in-logo mb-5" href="/top"><img src="/static/img/image_4.png" class="img-fluid" alt="logo"></a>
                     <div class="item">
                         <img src="/static/img/login.png" class="img-fluid mb-4" alt="logo">
-                        <h4 class="mb-1 text-white">Manage your orders</h4>
-                        <p>It is a long established fact that a reader will be distracted by the readable
-                            content.</p>
+                        <h4 class="mb-1 text-white">Здорово! Вы почти в нашей команде!</h4>
+                        <p>Осталось всего ничего, просто заполните форму и вступайте в ряды NTP.</p>
                     </div>
                 </div>
             </div>
