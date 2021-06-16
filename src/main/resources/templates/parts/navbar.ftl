@@ -23,7 +23,7 @@
                 <div class="iq-search-bar">
                     <form method="get" action="${path}" class="searchbox">
                         <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Type here to search...">
-                        <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                        <i class="search-link ri-search-line"></i>
                     </form>
                 </div>
             </#if>

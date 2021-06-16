@@ -92,6 +92,14 @@ public class UserSevice implements UserDetailsService {
         return userRepo.findAll();
     }
 
+    public List<User> findByName(String filter) {
+        if (filter != null && !filter.isEmpty()) {
+            return Collections.singletonList(userRepo.findByUsername(filter));
+        } else {
+            return userRepo.findAll();
+        }
+    }
+
     public void saveUser(User user, String username, Map<String, String> form) {
         user.setUsername(username);
 

@@ -71,7 +71,7 @@
         <div class="row no-gutters">
             <div class="col-md-6 text-center pt-5">
                 <div class="sign-in-detail text-white">
-                    <a class="sign-in-logo mb-5" href="/"><img src="/static/img/image_4.png" class="img-fluid" alt="logo"></a>
+                    <a class="sign-in-logo mb-5" href="/top"><img src="/static/img/image_4.png" class="img-fluid" alt="logo"></a>
                     <div class="item">
                         <img src="/static/img/login.png" class="img-fluid mb-4" alt="logo">
                         <h4 class="mb-1 text-white">Manage your orders</h4>

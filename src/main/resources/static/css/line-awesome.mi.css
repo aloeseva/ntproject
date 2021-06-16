@@ -5831,7 +5831,7 @@
     font-weight: 900;
     font-display: auto;
     src: url(/static/fonts/la-solid-900.eot);
-    src: url(/static/fonts/la-solid-900.eot?#iefix) format("embedded-opentype"), url(/static/fonts/la-solid-90.woff2) format("woff2"), url(/static/fonts/la-solid-90.woff) format("woff"), url(/static/fonts/la-solid-90.ttf) format("truetype"), url(/static/fonts/la-solid-900.svg#lineawesome) format("svg")
+    src: url(/static/fonts/la-solid-900.eot?#iefix) format("embedded-opentype"), url(/static/fonts/la-solid-900.woff2) format("woff2"), url(/static/fonts/la-solid-900.woff) format("woff"), url(/static/fonts/la-solid-900.ttf) format("truetype"), url(/static/fonts/la-solid-900.svg#lineawesome) format("svg")
 }
 
 .la, .las {

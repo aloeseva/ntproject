@@ -38,7 +38,7 @@
                             </a>
                         </div>
                         <div class="modal-body">
-                            <form method="post" <#if !message??> action="/main" </#if> enctype="multipart/form-data">
+                            <form method="post" <#if !message??> action="/" </#if> enctype="multipart/form-data">
                                 <div class="form-group">
                                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                                            value="<#if message??>${message.text}</#if>" name="text"
@@ -59,32 +59,8 @@
                                     </#if>
                                 </div>
                                 <hr>
-<#--                                <div class="form-group">-->
-<#--                                    <div class="custom-file">-->
-<#--                                        <input type="file" name="file" id="customFile" />-->
-<#--                                        <label class="custom-file-label" for="customFile">Choose file</label>-->
-<#--                                    </div>-->
-<#--                                </div>-->
-<#--                                <div class="form-group">-->
-<#--                                    <div class="custom-file">-->
-<#--                                        <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">-->
-<#--                                            <div class="profile-img-edit">-->
-
-<#--                                                <img class="profile-pic" src="/static/img/user.png" alt="profile-pic">-->
-<#--                                                <div class="p-image">-->
-<#--                                                    <i class="ri-image-line upload-button"></i>-->
-<#--                                                    <input class="file-upload" type="file" name="file" accept="image/*"/>-->
-<#--                                                    &lt;#&ndash;                                                    <img src="/static/img/07.png" alt="icon" class="img-fluid">&ndash;&gt;-->
-<#--                                                </div>-->
-<#--                                            </div>-->
-<#--                                            &lt;#&ndash;                                            <li class="iq-bg-primary rounded p-2 pointer mr-3">&ndash;&gt;-->
-<#--                                            &lt;#&ndash;                                                                                                <input type="file" name="file" id="customFile" class="iq-bg-primary rounded p-2 pointer mr-3"/>&ndash;&gt;-->
-<#--                                            &lt;#&ndash;                                            </li>&ndash;&gt;-->
-<#--                                        </ul>-->
-<#--                                    </div>-->
-<#--                                </div>-->
                                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                                <input type="hidden" name="id" value="<#if message??>${message.id}</#if>"/>
+                                <input type="hidden" name="id" value="<#if message?? && !textError??>${message.id}</#if>"/>
                                 <br>
                                 <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
                             </form>
@@ -95,42 +71,3 @@
         </div>
     </div>
 </div>
-
-<#--<a class="btn btn-primary offset-md-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">-->
-<#--    Message editor-->
-<#--</a>-->
-<#--<div class="collapse <#if message??>show</#if>" id="collapseExample">-->
-<#--    <div class="form-group mt-3 col-md-6 offset-md-3" style="width: auto">-->
-<#--        <form method="post" enctype="multipart/form-data">-->
-<#--            <div class="form-group">-->
-<#--                <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"-->
-<#--                       value="<#if message??>${message.text}</#if>" name="text" placeholder="Введите сообщение" />-->
-<#--                <#if textError??>-->
-<#--                    <div class="invalid-feedback">-->
-<#--                        ${textError}-->
-<#--                    </div>-->
-<#--                </#if>-->
-<#--            </div>-->
-<#--            <div class="form-group">-->
-<#--                <input type="text" class="form-control"-->
-<#--                       value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг" />-->
-<#--                <#if tagError??>-->
-<#--                    <div class="invalid-feedback">-->
-<#--                        ${tagError}-->
-<#--                    </div>-->
-<#--                </#if>-->
-<#--            </div>-->
-<#--            <div class="form-group">-->
-<#--                <div class="custom-file">-->
-<#--                    <input type="file" name="file" id="customFile" />-->
-<#--                    <label class="custom-file-label" for="customFile">Choose file</label>-->
-<#--                </div>-->
-<#--            </div>-->
-<#--            <input type="hidden" name="_csrf" value="${_csrf.token}" />-->
-<#--            <input type="hidden" name="id" value="<#if message??>${message.id}</#if>" />-->
-<#--            <div class="form-group">-->
-<#--                <button type="submit" class="btn btn-primary">Save message</button>-->
-<#--            </div>-->
-<#--        </form>-->
-<#--    </div>-->
-<#--</div>-->

@@ -27,6 +27,17 @@ public class UserController {
         return "userList";
     }
 
+    @GetMapping("list")
+    public String users(
+            @RequestParam(required = false, defaultValue = "") String filter,
+            Model model
+    ) {
+        model.addAttribute("users", userSevice.findByName(filter));
+        model.addAttribute("filter", filter);
+
+        return "users";
+    }
+
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("{user}")
     public String userEditForm(@PathVariable User user, Model model) {

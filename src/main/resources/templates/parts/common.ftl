@@ -88,7 +88,7 @@
     </div>
     <@n.navbar path isMessagePage />
     <#include "sidebar.ftl">
-    <#if friendPage>
+    <#if friendPage && !isMessagePage>
         <div class="col-lg-8 offset-lg-2">
             <div class="header-for-bg">
                 <div class="background-header position-relative">
@@ -102,7 +102,6 @@
                 </div>
             </div>
         </div>
-    <#--        <div id="content-page" class="content-page">-->
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
@@ -132,7 +131,16 @@
                 </div>
             </div>
         </div>
-    <#--        </div>-->
+    </#if>
+
+    <#if friendPage && isMessagePage>
+        <div class="col-lg-8 offset-lg-2">
+            <div class="header-for-bg">
+                <div class="background-header position-relative">
+                    <img src="/static/img/friends.jpg" class="img-fluid w-100" alt="header-bg">
+                </div>
+            </div>
+        </div>
     </#if>
 
     <div class="wrapper">
