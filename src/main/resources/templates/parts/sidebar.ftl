@@ -28,6 +28,26 @@
                                     class="las la-search"></i><span>Find users</span></a>
                     </li>
                 </#if>
+
+                <#if user??>
+                <!-- Yandex.Metrika informer -->
+                <a href="https://metrika.yandex.ru/stat/?id=81020854&amp;from=informer"
+                   target="_blank" rel="nofollow"><img
+                            src="https://informer.yandex.ru/informer/81020854/3_0_1E2745FF_1E2745FF_1_pageviews"
+                            style="width: 61px;height:31px;border: 0;margin-top: 387px;" alt="Яндекс.Метрика"
+                            title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+                            class="ym-advanced-informer" data-cid="81020854" data-lang="ru"/></a>
+                <!-- /Yandex.Metrika informer -->
+                <#else>
+                    <!-- Yandex.Metrika informer -->
+                    <a href="https://metrika.yandex.ru/stat/?id=81020854&amp;from=informer"
+                       target="_blank" rel="nofollow"><img
+                                src="https://informer.yandex.ru/informer/81020854/3_0_1E2745FF_1E2745FF_1_pageviews"
+                                style="width: 61px;height:31px;border: 0;margin-top: 590px;" alt="Яндекс.Метрика"
+                                title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+                                class="ym-advanced-informer" data-cid="81020854" data-lang="ru"/></a>
+                    <!-- /Yandex.Metrika informer -->
+                </#if>
             </ul>
         </nav>
         <div class="p-3"></div>
