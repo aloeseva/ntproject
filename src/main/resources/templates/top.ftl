@@ -14,7 +14,9 @@
             </div>
             <#if isPage>
                 <#list messages as message>
+                    <#if message.author??>
                     <div class="iq-card iq-card-block iq-card-stretch iq-card-height" data-id="${message.id}">
+
                         <div class="iq-card-body" data-id="${message.id}">
                             <div class="user-post-data">
                                 <div class="d-flex flex-wrap">
@@ -24,7 +26,7 @@
                                                class="">${message.authorName}</a>
                                         </h5>
                                     </div>
-                                    <#if message.author.id == currentUserId>
+                                    <#if message.author.id == currentUserId || isAdmin>
                                         <div class="iq-card-post-toolbar">
                                             <div class="dropdown">
                                           <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -40,6 +42,18 @@
                                                             <div class="data ml-2">
                                                                 <h6>Edit</h6>
                                                                 <p class="mb-0">Edit your post</p>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item p-3"
+                                                       href="/messages/delete/${message.author.id}/${message.id}">
+                                                        <div class="d-flex align-items-top">
+                                                            <div class="icon font-size-20"><i
+                                                                        class="ri-close-circle-line"></i>
+                                                            </div>
+                                                            <div class="data ml-2">
+                                                                <h6>Delete</h6>
+                                                                <p class="mb-0">Delete your post</p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -95,16 +109,18 @@
                                         </div>
                                         <div class="total-comment-block">
                                             <div class="like-data">
-                                                <a class="col align-self-center" href="/messages/${message.id}/comment">
-                                                    <#list comments as comment>
-                                                        <#if comment.id == message.id>
-                                                            <#if comment.exist>
-                                                                ${comment.size} Comment
-                                                            <#else>
-                                                                0 Comment
+                                                <a href="/messages/${message.id}/comment">
+                                                    <h6 title="Открыть комментарии">
+                                                        <#list comments as comment>
+                                                            <#if comment.id == message.id>
+                                                                <#if comment.exist>
+                                                                    ${comment.size} Comment
+                                                                <#else>
+                                                                    0 Comment
+                                                                </#if>
                                                             </#if>
-                                                        </#if>
-                                                    </#list>
+                                                        </#list>
+                                                    </h6>
                                                 </a>
                                             </div>
                                         </div>
@@ -115,12 +131,38 @@
                                     <#if comment.id == message.id>
                                         <#if comment.exist>
                                             <#list comment.comments as com>
+                                                <div class="d-flex flex-wrap" style="justify-content: flex-end;">
+                                                    <#if com.author.id == currentUserId || isAdmin>
+                                                        <div class="iq-card-post-toolbar">
+                                                            <div class="dropdown">
+                                          <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false" role="button">
+                                          <i class="ri-more-fill"></i>
+                                          </span>
+                                                                <div class="dropdown-menu m-0 p-0">
+                                                                    <a class="dropdown-item p-3"
+                                                                       href="/messages/comDelete/${com.author.id}/${com.id}">
+                                                                        <div class="d-flex align-items-top">
+                                                                            <div class="icon font-size-20">
+                                                                                <i class="ri-close-circle-line"></i>
+                                                                            </div>
+                                                                            <div class="data ml-2">
+                                                                                <h6>Delete</h6>
+                                                                                <p class="mb-0">Delete your
+                                                                                    comment</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </#if>
+                                                </div>
                                                 <ul class="post-comments p-0 m-0">
                                                     <li class="mb-2">
                                                         <div class="d-flex flex-wrap">
                                                             <div class="comment-data-block ml-3">
-                                                                <a href="/user-messages/${message.author.id}" class="">${message.authorName}</a>
-                                                                <#--                                                            <h6>${com.authorName}</h6>-->
+                                                                <a href="/user-messages/${com.author.id}"><h6>${com.authorName}</h6></a>
                                                                 <p class="mb-0">${com.text}</p>
                                                                 <div class="d-flex flex-wrap align-items-center comment-activity">
                                                                     <div class="like-data">
@@ -214,6 +256,7 @@
                             </div>
                         </div>
                     </div>
+                    </#if>
                 </#list>
             <#else>
                 <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">

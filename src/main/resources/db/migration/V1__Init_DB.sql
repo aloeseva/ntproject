@@ -28,16 +28,16 @@ CREATE TABLE IF NOT EXISTS usr
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS message
 (
-    `id`                BIGINT        NOT NULL,
-    `registration_date` DATETIME,
-    `tag`               VARCHAR(255),
-    `text`              VARCHAR(2048) NOT NULL,
-    `user_id`           BIGINT,
+    `id`        BIGINT        NOT NULL,
+    `post_date` DATETIME,
+    `tag`       VARCHAR(255),
+    `text`      VARCHAR(2048) NOT NULL,
+    `user_id`   BIGINT,
     PRIMARY KEY (`id`),
     INDEX massage_user_fk (`user_id` ASC),
     CONSTRAINT massage_user_fk
         FOREIGN KEY (`user_id`)
-            REFERENCES usr (`id`)
+            REFERENCES usr (`id`) on delete cascade
 );
 
 -- -----------------------------------------------------
@@ -45,19 +45,19 @@ CREATE TABLE IF NOT EXISTS message
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS comment
 (
-    `id`                BIGINT        NOT NULL,
-    `text`              VARCHAR(2048) NOT NULL,
-    `user_id`           BIGINT,
-    `message_id`           BIGINT,
+    `id`         BIGINT        NOT NULL,
+    `text`       VARCHAR(2048) NOT NULL,
+    `user_id`    BIGINT,
+    `message_id` BIGINT,
     PRIMARY KEY (`id`),
     INDEX comment_user_fk (`user_id` ASC),
     CONSTRAINT comment_user_fk
         FOREIGN KEY (`user_id`)
-            REFERENCES usr (`id`),
+            REFERENCES usr (`id`) on delete cascade,
     INDEX comment_message_fk (`message_id` ASC),
     CONSTRAINT comment_message_fk
         FOREIGN KEY (`message_id`)
-            REFERENCES message (`id`)
+            REFERENCES message (`id`) on delete cascade
 );
 
 -- -----------------------------------------------------

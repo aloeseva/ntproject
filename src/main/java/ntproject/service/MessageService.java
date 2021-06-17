@@ -1,9 +1,11 @@
 package ntproject.service;
 
 
+import ntproject.domain.Comment;
 import ntproject.domain.Message;
 import ntproject.domain.User;
 import ntproject.domain.dto.MessageDto;
+import ntproject.repos.CommentRepo;
 import ntproject.repos.MessageRepo;
 import ntproject.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +39,7 @@ public class MessageService {
                 List<Long> id = new ArrayList<>();
                 userRepo.findByUsername(currentUser.getUsername()).getSubscriptions().forEach(user -> {
                     user.getMessages().stream().map(Message::getId).forEach(id::add);
-                    if (userRepo.findByUsername(currentUser.getUsername()).getMessages().size() != 0){
+                    if (userRepo.findByUsername(currentUser.getUsername()).getMessages().size() != 0) {
                         userRepo.findByUsername(currentUser.getUsername()).getMessages().stream().map(Message::getId).forEach(id::add);
                     }
                 });
@@ -69,30 +71,41 @@ public class MessageService {
         return messageRepo.findById(id).isPresent() ? messageRepo.findById(id).get() : null;
     }
 
+    public void deleteMessage(Message message) {
+        for (Comment comment : message.getComments()) {
+            comment.getDislikes().clear();
+            comment.getLikes().clear();
+            comment.getAuthor().getComments().remove(comment);
+        }
+        message.getComments().clear();
+        message.getLikes().clear();
+        message.getDislikes().clear();
+        messageRepo.save(message);
+        message.getAuthor().getMessages().remove(message);
+        userRepo.save(message.getAuthor());
+    }
+
+    public void deleteComment(Comment comment) {
+        comment.getDislikes().clear();
+        comment.getLikes().clear();
+        comment.getMessage().getComments().remove(comment);
+        messageRepo.save(comment.getMessage());
+    }
+
     public List<MessageDto> topMessagesList(User currentUser) {
         Date date = new Date();
-        //                .sorted(Comparator.comparingInt(o -> o.getLikes().size()))
         List<Message> messages = (List<Message>) ((List<Message>) messageRepo.findAll()).stream()
                 .filter(c -> c.getPostDate().compareTo(new Date(date.getTime() - 24 * 3600 * 1000L)) >= 0)
                 .sorted((Comparator) (o1, o2) -> {
-
-                    Integer x1 = ((Message) o1).getLikes().size();
-                    Integer x2 = ((Message) o2).getLikes().size();
-                    int sComp = x1.compareTo(x2);
-
-                    if (sComp != 0) {
-                        return sComp;
-                    }
-
-                    Integer y1 = ((Message) o1).getComments().size();
-                    Integer y2 = ((Message) o2).getComments().size();
+                    Integer y1 = ((Message) o1).getComments().size() + ((Message) o1).getLikes().size();
+                    Integer y2 = ((Message) o2).getComments().size() + ((Message) o2).getLikes().size();
                     return y1.compareTo(y2);
                 })
                 .collect(Collectors.toList());
 
         int size = messages.size();
         if (size > 20) {
-           messages = messages.subList(size - 20, size);
+            messages = messages.subList(size - 20, size);
         }
         List<Long> id = messages.stream().map(Message::getId).collect(Collectors.toList());
         if (id.size() == 0) {
@@ -105,22 +118,11 @@ public class MessageService {
 
             return (List<MessageDto>) m.stream()
                     .sorted((Comparator) (o1, o2) -> {
-
-                        Long x1 = ((MessageDto) o1).getLikes();
-                        Long x2 = ((MessageDto) o2).getLikes();
-                        int sComp = x2.compareTo(x1);
-
-                        if (sComp != 0) {
-                            return sComp;
-                        }
-
-                        Integer y1 = ((MessageDto) o1).getSize();
-                        Integer y2 = ((MessageDto) o2).getSize();
+                        Integer y1 = Math.toIntExact(((MessageDto) o1).getSize() + ((MessageDto) o1).getLikes());
+                        Integer y2 = Math.toIntExact(((MessageDto) o2).getSize() + ((MessageDto) o2).getLikes());
                         return y2.compareTo(y1);
                     })
                     .collect(Collectors.toList());
         }
-//        return id.size() == 0 ? null : messageRepo.findTop(currentUser, id).stream().sorted(Comparator.comparingInt(o -> Math.toIntExact(o.getLikes())))
-//                .collect(Collectors.toList());
     }
 }

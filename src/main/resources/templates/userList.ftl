@@ -1,4 +1,5 @@
 <#import "parts/common.ftl" as c>
+<#include "parts/security.ftl">
 
 <@c.page "#" false false>
     <div class="col-sm-12">
@@ -16,6 +17,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Role</th>
                             <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -24,6 +26,12 @@
                                 <td>${user.username}</td>
                                 <td><#list user.roles as role>${role}<#sep>, </#list></td>
                                 <td><a href="/user/${user.id}">edit</a></td>
+                                <#if user.id != currentUserId>
+                                    <td><a href="/user/delete/admin/${user.id}" class="btn btn-outline-danger"><i
+                                                    class="ri-alert-line"></i> delete</a></td>
+                                <#else>
+                                    <td></td>
+                                </#if>
                             </tr>
                         </#list>
                         </tbody>
@@ -33,24 +41,4 @@
         </div>
     </div>
 
-<#--    List of users-->
-
-<#--    <table>-->
-<#--        <thead>-->
-<#--        <tr>-->
-<#--            <th>Name</th>-->
-<#--            <th>Role</th>-->
-<#--            <th></th>-->
-<#--        </tr>-->
-<#--        </thead>-->
-<#--        <tbody>-->
-<#--        <#list users as user>-->
-<#--            <tr>-->
-<#--                <td>${user.username}</td>-->
-<#--                <td><#list user.roles as role>${role}<#sep>, </#list></td>-->
-<#--                <td><a href="/user/${user.id}">edit</a></td>-->
-<#--            </tr>-->
-<#--        </#list>-->
-<#--        </tbody>-->
-<#--    </table>-->
 </@c.page>

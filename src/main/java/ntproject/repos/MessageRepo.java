@@ -119,4 +119,5 @@ public interface MessageRepo extends CrudRepository<Message, Long> {
             "      m.tag = :tag " +
             "group by m")
     Page<MessageDto> findMessageByAuthorAndTag(Pageable pageable, @Param("user") User user, @Param("ids") List<Long> ids, @Param("tag") String tag);
+
 }

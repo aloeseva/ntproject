@@ -1,3 +1,5 @@
+<#--<#include "../parts/security.ftl">-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,7 +21,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>404</title>
+    <title>400</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/static/img/gorila.png"/>
     <!-- Bootstrap CSS -->
@@ -45,9 +47,8 @@
             <div class="col-sm-12 text-center">
                 <div class="iq-error position-relative mt-5">
                     <img src="/static/img/error/1.png" class="img-fluid iq-error-img" alt="">
-                    <h1 class="text-in-box">404</h1>
-                    <h2 class="mb-0">Oops! This Page is Not Found.</h2>
-                    <p>The requested page dose not exist.</p>
+                    <h1 class="text-in-box">400</h1>
+                    <h2 class="mb-0">Bad Request.</h2>
                     <a class="btn btn-primary mt-3" href="/top"><i class="ri-home-4-line"></i>Back to Home</a>
                 </div>
             </div>

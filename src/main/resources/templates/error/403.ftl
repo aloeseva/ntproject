@@ -50,7 +50,7 @@
                     <h1 class="text-in-box">403</h1>
                     <h2 class="mb-0">Forbidden.</h2>
                     <p>Sorry, you haven't access to the requested page.</p>
-                    <a class="btn btn-primary mt-3" href="/"><i class="ri-home-4-line"></i>Back to Home</a>
+                    <a class="btn btn-primary mt-3" href="/top"><i class="ri-home-4-line"></i>Back to Home</a>
                 </div>
             </div>
         </div>

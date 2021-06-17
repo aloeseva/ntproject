@@ -85,12 +85,14 @@
                                 </div>
                                 <div class="total-comment-block">
                                     <div class="like-data">
-                                        <a class="col align-self-center" href="#">
-                                            <#if isPage>
-                                                ${message.size} Comment
-                                            <#else >
-                                                0 Comment
-                                            </#if>
+                                        <a href="#">
+                                            <h6>
+                                                <#if isPage>
+                                                    ${message.size} Comment
+                                                <#else >
+                                                    0 Comment
+                                                </#if>
+                                            </h6>
                                         </a>
                                     </div>
                                 </div>
@@ -127,8 +129,10 @@
                                 <li class="mb-2">
                                     <div class="d-flex flex-wrap">
                                         <div class="comment-data-block ml-3">
-                                            <a href="/user-messages/${message.author.id}"
-                                               class="">${message.authorName}</a>
+                                            <a href="/user-messages/${com.author.id}"><h6>${com.authorName}</h6></a>
+
+<#--                                            <a href="/user-messages/${message.author.id}"-->
+<#--                                               class="">${message.authorName}</a>-->
                                             <#--                                            <h6>${com.authorName}</h6>-->
                                             <p class="mb-0">${com.text}</p>
                                             <div class="d-flex flex-wrap align-items-center comment-activity">

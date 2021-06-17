@@ -1,25 +1,48 @@
+<#--<script>-->
+<#--    window.onload=function(){-->
+<#--        document.getElementById("Add").click();-->
+<#--    };-->
+<#--</script>-->
+
+<#--<form method="post" action="/logout">-->
+<#--    <input type="hidden" name="_csrf" value="${_csrf.token}"/>-->
+<#--    <button type="submit" id="Add" value="Add">Post</button>-->
+<#--</form>-->
+
 <!doctype html>
 <html lang="en">
 <head>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(81020854, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/81020854" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>
+        window.onload = function () {
+            document.getElementById("Add").click();
+        };
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/81020854" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>404</title>
+    <title>logout</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/static/img/gorila.png"/>
     <!-- Bootstrap CSS -->
@@ -39,21 +62,18 @@
 </div>
 <!-- loader END -->
 <!-- Wrapper Start -->
-<div class="wrapper">
-    <div class="container p-0">
-        <div class="row no-gutters">
-            <div class="col-sm-12 text-center">
-                <div class="iq-error position-relative mt-5">
-                    <img src="/static/img/error/1.png" class="img-fluid iq-error-img" alt="">
-                    <h1 class="text-in-box">404</h1>
-                    <h2 class="mb-0">Oops! This Page is Not Found.</h2>
-                    <p>The requested page dose not exist.</p>
-                    <a class="btn btn-primary mt-3" href="/top"><i class="ri-home-4-line"></i>Back to Home</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<form method="post" action="/logout">
+    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+    <button type="submit" id="Add" value="Add" style="
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: transparent;">
+    </button>
+</form>
 <!-- Wrapper END -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

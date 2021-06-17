@@ -39,7 +39,7 @@
                             <a href="/user-messages/${currentUserId}" class="iq-waves-effect d-flex align-items-center">
                                 <img src="/static/img/user.png" class="img-fluid rounded-circle mr-3" alt="user">
                                 <div class="caption">
-                                    <h6 class="mb-0 line-height">Profile</h6>
+                                    <h6 class="mb-0 line-height">${name}</h6>
                                 </div>
                             </a>
                         </li>

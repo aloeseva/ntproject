@@ -72,31 +72,6 @@ public class MessageController {
         return "main";
     }
 
-    private void comments(@AuthenticationPrincipal User user, List<MessageComment> comments, MessageDto m) {
-        Long id = m.getId();
-        List<CommentDto> commentList;
-        MessageComment comment = new MessageComment();
-        int size;
-
-        commentList = commentService.commentList(messageService.findById(id), user);
-
-        if (commentList == null) {
-            size = 0;
-        } else {
-            size = commentList.size();
-        }
-        if (size != 0) {
-            comment.setSize(size);
-            comment.setComments(size > 3 ? commentList.subList(0, 3) : commentList);
-            comment.setId(id);
-            comment.setExist(true);
-        } else {
-            comment.setId(id);
-            comment.setExist(false);
-        }
-        comments.add(comment);
-    }
-
     @PostMapping("/")
     public String add(
             @AuthenticationPrincipal User user,
@@ -120,7 +95,7 @@ public class MessageController {
             messageRepo.save(message);
         }
 
-        Page<MessageDto> page = messageService.messageList(pageable, filter, user);
+        Page<MessageDto> page = messageService.friendsMessageList(pageable, user, filter);
         boolean isPage = page != null;
         List<MessageComment> comments = new ArrayList<>();
 
@@ -137,6 +112,31 @@ public class MessageController {
         model.addAttribute("page", page);
 
         return "main";
+    }
+
+    private void comments(@AuthenticationPrincipal User user, List<MessageComment> comments, MessageDto m) {
+        Long id = m.getId();
+        List<CommentDto> commentList;
+        MessageComment comment = new MessageComment();
+        int size;
+
+        commentList = commentService.commentList(messageService.findById(id), user);
+
+        if (commentList == null) {
+            size = 0;
+        } else {
+            size = commentList.size();
+        }
+        if (size != 0) {
+            comment.setSize(size);
+            comment.setComments(size > 3 ? commentList.subList(0, 3) : commentList);
+            comment.setId(id);
+            comment.setExist(true);
+        } else {
+            comment.setId(id);
+            comment.setExist(false);
+        }
+        comments.add(comment);
     }
 
     @PostMapping("/messages/{message}/comment")
@@ -249,6 +249,48 @@ public class MessageController {
         model.addAttribute("url", "/user-messages/" + author.getId());
 
         return "userMessages";
+    }
+
+    @GetMapping("/messages/delete/{user}/{message}")
+    public String deleteMessage(
+            @AuthenticationPrincipal User currentUser,
+            @PathVariable Long user,
+            @PathVariable Message message,
+            RedirectAttributes redirectAttributes,
+            @RequestHeader(required = false) String referer
+    ) {
+
+        if (message.getAuthor().equals(currentUser) || currentUser.isAdmin()) {
+            messageService.deleteMessage(message);
+        }
+
+        UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
+
+        components.getQueryParams()
+                .forEach(redirectAttributes::addAttribute);
+
+        return "redirect:" + components.getPath();
+    }
+
+    @GetMapping("/messages/comDelete/{user}/{comment}")
+    public String deleteComment(
+            @AuthenticationPrincipal User currentUser,
+            @PathVariable Long user,
+            @PathVariable Comment comment,
+            RedirectAttributes redirectAttributes,
+            @RequestHeader(required = false) String referer
+    ) {
+
+        if (comment.getAuthor().equals(currentUser) || currentUser.isAdmin()) {
+            messageService.deleteComment(comment);
+        }
+
+        UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
+
+        components.getQueryParams()
+                .forEach(redirectAttributes::addAttribute);
+
+        return "redirect:" + components.getPath();
     }
 
     @PostMapping("/user-messages/{user}")

@@ -1,8 +1,12 @@
 package ntproject.service;
 
 
+import ntproject.domain.Comment;
+import ntproject.domain.Message;
 import ntproject.domain.Role;
 import ntproject.domain.User;
+import ntproject.repos.CommentRepo;
+import ntproject.repos.MessageRepo;
 import ntproject.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -20,6 +24,12 @@ import java.util.stream.Collectors;
 public class UserSevice implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
+
+    @Autowired
+    private MessageRepo messageRepo;
+
+    @Autowired
+    private CommentRepo commentRepo;
 
     @Autowired
     private MailSender mailSender;
@@ -55,7 +65,7 @@ public class UserSevice implements UserDetailsService {
 
         userRepo.save(user);
 
-        sendMessage(user);
+//        sendMessage(user);
 
         return true;
     }
@@ -100,6 +110,48 @@ public class UserSevice implements UserDetailsService {
         }
     }
 
+    public void deleteUser(User user) {
+        user.getRoles().clear();
+        for (User tmpUser :
+                user.getSubscribers()) {
+            tmpUser.getSubscriptions().remove(user);
+            userRepo.save(tmpUser);
+        }
+        user.getSubscribers().clear();
+        for (User tmpUser :
+                user.getSubscriptions()) {
+            tmpUser.getSubscribers().remove(user);
+            userRepo.save(tmpUser);
+        }
+        user.getSubscriptions().clear();
+        for (Message message : user.getMessages()) {
+            for (Comment comment : message.getComments()) {
+                comment.getDislikes().clear();
+                comment.getLikes().clear();
+            }
+            message.getLikes().clear();
+            message.getDislikes().clear();
+        }
+        for (Comment comment :
+                user.getComments()) {
+            comment.getDislikes().clear();
+            comment.getLikes().clear();
+        }
+        for (Message m :
+                messageRepo.findAll()) {
+            m.getDislikes().remove(user);
+            m.getLikes().remove(user);
+            messageRepo.save(m);
+        }
+        for (Comment comment :
+                commentRepo.findAll()) {
+            comment.getDislikes().remove(user);
+            comment.getLikes().remove(user);
+            commentRepo.save(comment);
+        }
+        userRepo.delete(user);
+    }
+
     public void saveUser(User user, String username, Map<String, String> form) {
         user.setUsername(username);
 
@@ -138,9 +190,9 @@ public class UserSevice implements UserDetailsService {
 
         userRepo.save(user);
 
-        if (isEmailChanged) {
-            sendMessage(user);
-        }
+//        if (isEmailChanged) {
+//            sendMessage(user);
+//        }
     }
 
     public void subscribe(User currentUser, User user) {
