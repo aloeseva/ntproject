@@ -152,6 +152,8 @@ public class MessageController {
     ) throws IOException {
         comment.setAuthor(user);
         comment.setMessage(message);
+        Date date = new Date();
+        comment.setPostDate(date);
 
         if (bindingResult.hasErrors()) {
             Map<String, String> errorsMap = ControllerUtils.getErrors(bindingResult);

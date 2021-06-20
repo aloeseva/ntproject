@@ -8,17 +8,16 @@ import ntproject.domain.util.MessageHelper;
 import java.util.Set;
 
 public class MessageDto {
-    private Long id;
-    private String text;
-    private String tag;
-    private User author;
-    private Set<Comment> comments;
-//    private String filename;
-    private Long likes;
-    private Boolean meLiked;
-    private Long dislikes;
-    private Boolean meDisliked;
-
+    private final Long id;
+    private final String text;
+    private final String tag;
+    private final User author;
+    private final Set<Comment> comments;
+    private final Long likes;
+    private final Boolean meLiked;
+    private final Long dislikes;
+    private final Boolean meDisliked;
+    private final String date;
 
     public MessageDto(Message message, Long likes, Boolean meLiked, Long dislikes, Boolean meDisliked) {
         this.id = message.getId();
@@ -26,6 +25,7 @@ public class MessageDto {
         this.tag = message.getTag();
         this.author = message.getAuthor();
         this.comments = message.getComments();
+        this.date = message.getDate();
         this.likes = likes;
         this.meLiked = meLiked;
         this.dislikes = dislikes;
@@ -38,6 +38,7 @@ public class MessageDto {
         this.tag = message.getTag();
         this.author = message.getAuthor();
         this.comments = message.getComments();
+        this.date = message.getDate();
         this.likes = likes;
         this.meLiked = false;
         this.dislikes = dislikes;
@@ -68,9 +69,13 @@ public class MessageDto {
         return author;
     }
 
-//    public String getFilename() {
-//        return filename;
-//    }
+    public Set<Comment> getComments() {
+        return comments;
+    }
+
+    public String getDate() {
+        return date;
+    }
 
     public Long getLikes() {
         return likes;

@@ -25,6 +25,7 @@
                                             <a href="/user-messages/${message.author.id}"
                                                class="">${message.authorName}</a>
                                         </h5>
+                                        <p class="mb-0 text-primary">${message.date}</p>
                                     </div>
                                     <#if message.author.id == currentUserId || isAdmin>
                                         <div class="iq-card-post-toolbar">

@@ -62,7 +62,8 @@ public class UserSevice implements UserDetailsService {
         user.setRoles(Collections.singleton(Role.USER));
         user.setActivationCode(UUID.randomUUID().toString());
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-
+        Date date = new Date();
+        user.setRegistrationDate(date);
         userRepo.save(user);
 
 //        sendMessage(user);

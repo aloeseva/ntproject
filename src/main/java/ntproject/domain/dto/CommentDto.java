@@ -14,13 +14,14 @@ public class CommentDto {
     private Boolean meLiked;
     private Long dislikes;
     private Boolean meDisliked;
-
+    private final String date;
 
     public CommentDto(Comment comment, Long likes, Boolean meLiked, Long dislikes, Boolean meDisliked) {
         this.id = comment.getId();
         this.text = comment.getText();
         this.author = comment.getAuthor();
         this.message = comment.getMessage();
+        this.date = comment.getDate();
         this.likes = likes;
         this.meLiked = meLiked;
         this.dislikes = dislikes;
@@ -32,6 +33,7 @@ public class CommentDto {
         this.text = comment.getText();
         this.author = comment.getAuthor();
         this.message = comment.getMessage();
+        this.date = comment.getDate();
         this.likes = likes;
         this.meLiked = false;
         this.dislikes = dislikes;
@@ -72,6 +74,10 @@ public class CommentDto {
 
     public Boolean getMeDisliked() {
         return meDisliked;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     @Override

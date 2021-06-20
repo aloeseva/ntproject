@@ -24,21 +24,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers(
-//                            "/",
-                            "/registration", "/top", "/static/img/**", "/static/fonts/**",
-//                            "/static/**",
-                            "/static/js/**", "/static/css/**", "/activate/*", "/icon/**").permitAll()
-                    .anyRequest().authenticated()
+                .antMatchers("/registration", "/top", "/static/img/**", "/static/fonts/**",
+                        "/static/js/**", "/static/css/**", "/activate/*", "/icon/**").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                    .formLogin()
-                    .loginPage("/login")
-                    .permitAll()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
 //                .and()
 //                    .rememberMe()
                 .and()
-                    .logout()
-                    .permitAll();
+                .logout()
+                .permitAll();
     }
 
     @Override
