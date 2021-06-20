@@ -131,10 +131,6 @@
                                     <div class="d-flex flex-wrap">
                                         <div class="comment-data-block ml-3">
                                             <a href="/user-messages/${com.author.id}"><h6>${com.authorName}</h6></a>
-
-<#--                                            <a href="/user-messages/${message.author.id}"-->
-<#--                                               class="">${message.authorName}</a>-->
-                                            <#--                                            <h6>${com.authorName}</h6>-->
                                             <p class="mb-0">${com.text}</p>
                                             <div class="d-flex flex-wrap align-items-center comment-activity">
                                                 <div class="like-data">

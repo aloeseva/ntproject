@@ -29,16 +29,9 @@
                                 </#if>
                             </#if>
                             <ul class="social-data-block d-flex align-items-center justify-content-between list-inline p-0 m-0">
-<#--                                <div class="comment-data-block ml-3">-->
-<#--                                    <i class="las la-hand-point-up"></i>-->
-<#--                                    <span> ${com.date} </span>-->
-<#--                                </div>-->
                                 <li>
                                     <i class="las la-calendar-alt"></i><span>${userChannel.date}</span></a>
                                 </li>
-<#--                                <li class="text-center pr-3">-->
-<#--                                    <a href="#"><img src="images/icon/08.png" class="img-fluid rounded" alt="facebook"></a>-->
-<#--                                </li>-->
                             </ul>
                         </div>
 

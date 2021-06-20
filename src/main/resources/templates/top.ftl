@@ -203,6 +203,7 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <span> ${com.date} </span>
                                                             </div>
                                                         </div>
                                                     </li>
