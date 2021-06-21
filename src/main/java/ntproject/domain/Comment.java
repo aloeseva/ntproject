@@ -62,6 +62,8 @@ public class Comment {
         Date date = new Date();
         String res = "только что";
 
+        if (postDate != null) {
+
         long time = (date.getTime() - postDate.getTime()) / 1000;
 
         if (time > 59) {
@@ -137,7 +139,9 @@ public class Comment {
                 }
             }
         }
-
+        } else {
+            res = "n/a";
+        }
         return res;
     }
 
