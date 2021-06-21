@@ -62,81 +62,80 @@ public class Comment {
         Date date = new Date();
         String res = "только что";
 
-        if (postDate != null) {
-            long time = (date.getTime() - postDate.getTime()) / 1000;
+        long time = (date.getTime() - postDate.getTime()) / 1000;
 
-            if (time > 59) {
-                long tmpTime = (time % 3600) / 60;
-                long timeMod = tmpTime % 10;
-                if (timeMod == 1) {
-                    res = tmpTime + " минута назад";
+        if (time > 59) {
+            long tmpTime = (time % 3600) / 60;
+            long timeMod = tmpTime % 10;
+            if (timeMod == 1) {
+                res = tmpTime + " минута назад";
+            }
+            if (timeMod > 1 && timeMod < 5) {
+                res = tmpTime + " минуты назад";
+            }
+
+            if (timeMod == 0 || timeMod >= 5) {
+                res = tmpTime + " минут назад";
+            }
+
+            tmpTime = (time % 86400) / 3600;
+            if (time >= 3600) {
+                if (tmpTime == 1) {
+                    res = "час назад";
                 }
-                if (timeMod > 1 && timeMod < 5) {
-                    res = tmpTime + " минуты назад";
+
+                if (tmpTime == 2) {
+                    res = "два часа назад";
                 }
 
-                if (timeMod == 0 || timeMod >= 5) {
-                    res = tmpTime + " минут назад";
+                if (tmpTime == 3) {
+                    res = "три часа назад";
                 }
 
-                tmpTime = (time % 86400) / 3600;
-                if (tmpTime >= 1) {
-                    if (tmpTime == 1) {
-                        res = "час назад";
-                    }
+                if (tmpTime == 4) {
+                    res = "четыре часа назад";
+                }
 
-                    if (tmpTime == 2) {
-                        res = "два часа назад";
-                    }
+                if (time > 18000) {
+                    int yearDiff = date.getYear() - postDate.getYear();
+                    int dayDiff = date.getDate() - postDate.getDate();
+                    int monthDiff = date.getMonth() - postDate.getMonth();
 
-                    if (tmpTime == 3) {
-                        res = "три часа назад";
-                    }
+                    tmpTime = time / 86400;
+                    long hours = postDate.getHours();
+                    long minutes = postDate.getMinutes();;
 
-                    if (tmpTime == 4) {
-                        res = "четыре часа назад";
-                    }
-
-                    if (tmpTime > 4) {
-                        tmpTime = (time % 86400) / 900;
-                        time = postDate.getTime() / 1000;
-                        long hours = (time % 86400) / 3600;
-                        long minutes = (time % 3600) / 60;
-
-                        if (tmpTime < 24) {
-                            if (minutes < 10) {
-                                res = "сегодня в " + hours + ":0" + minutes;
-                            } else {
-                                res = "сегодня в " + hours + ":" + minutes;
-                            }
+                    if (yearDiff == 0 && dayDiff == 0 && monthDiff == 0) {
+                        if (minutes < 10) {
+                            res = "сегодня в " + hours + ":0" + minutes;
+                        } else {
+                            res = "сегодня в " + hours + ":" + minutes;
                         }
+                    }
 
-                        if (tmpTime > 24 && tmpTime < 48) {
-                            if (minutes < 10) {
-                                res = "вчера в " + hours + ":0" + minutes;
-                            } else {
-                                res = "вчера в " + hours + ":" + minutes;
-                            }
+                    if (yearDiff == 0 && dayDiff == 1 && monthDiff == 0) {
+                        if (minutes < 10) {
+                            res = "вчера в " + hours + ":0" + minutes;
+                        } else {
+                            res = "вчера в " + hours + ":" + minutes;
                         }
+                    }
 
-                        if (tmpTime > 48) {
-                            String[] dateString =
-                                    DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)
-                                            .withLocale(new Locale("ru"))
-                                            .format(LocalDate.of(postDate.getYear(), postDate.getMonth(), postDate.getDay())).split(" ");
-                            String day = dateString[0];
-                            String month = dateString[1];
-                            if (minutes < 10) {
-                                res = day + " " + month + " в " + hours + ":0" + minutes;
-                            } else {
-                                res = day + " " + month + " в " + hours + ":" + minutes;
-                            }
+                    if (yearDiff == 0 && dayDiff > 1 && monthDiff == 0 || tmpTime > 2) {
+                        String[] dateString =
+                                DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)
+                                        .withLocale(new Locale("ru"))
+                                        .format(LocalDate.of(1900 + postDate.getYear(), postDate.getMonth() + 1, postDate.getDate())).split(" ");
+                        String day = dateString[0];
+                        String month = dateString[1];
+                        if (minutes < 10) {
+                            res = day + " " + month + " в " + hours + ":0" + minutes;
+                        } else {
+                            res = day + " " + month + " в " + hours + ":" + minutes;
                         }
                     }
                 }
             }
-        } else {
-            res = "n/a";
         }
 
         return res;

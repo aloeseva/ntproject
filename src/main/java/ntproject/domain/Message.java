@@ -85,7 +85,7 @@ public class Message {
             }
 
             tmpTime = (time % 86400) / 3600;
-            if (tmpTime >= 1) {
+            if (time >= 3600) {
                 if (tmpTime == 1) {
                     res = "час назад";
                 }
@@ -102,13 +102,16 @@ public class Message {
                     res = "четыре часа назад";
                 }
 
-                if (tmpTime > 4) {
-                    tmpTime = (time % 86400) / 900;
-                    time = postDate.getTime() / 1000;
-                    long hours = (time % 86400) / 3600;
-                    long minutes = (time % 3600) / 60;
+                if (time > 18000) {
+                    int yearDiff = date.getYear() - postDate.getYear();
+                    int dayDiff = date.getDate() - postDate.getDate();
+                    int monthDiff = date.getMonth() - postDate.getMonth();
 
-                    if (tmpTime < 24) {
+                    tmpTime = time / 86400;
+                    long hours = postDate.getHours();
+                    long minutes = postDate.getMinutes();;
+
+                    if (yearDiff == 0 && dayDiff == 0 && monthDiff == 0) {
                         if (minutes < 10) {
                             res = "сегодня в " + hours + ":0" + minutes;
                         } else {
@@ -116,7 +119,7 @@ public class Message {
                         }
                     }
 
-                    if (tmpTime > 24 && tmpTime < 48) {
+                    if (yearDiff == 0 && dayDiff == 1 && monthDiff == 0) {
                         if (minutes < 10) {
                             res = "вчера в " + hours + ":0" + minutes;
                         } else {
@@ -124,11 +127,11 @@ public class Message {
                         }
                     }
 
-                    if (tmpTime > 48) {
+                    if (yearDiff == 0 && dayDiff > 1 && monthDiff == 0 || tmpTime > 2) {
                         String[] dateString =
                                 DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)
                                         .withLocale(new Locale("ru"))
-                                        .format(LocalDate.of(postDate.getYear(), postDate.getMonth(), postDate.getDay())).split(" ");
+                                        .format(LocalDate.of(1900 + postDate.getYear(), postDate.getMonth() + 1, postDate.getDate())).split(" ");
                         String day = dateString[0];
                         String month = dateString[1];
                         if (minutes < 10) {
