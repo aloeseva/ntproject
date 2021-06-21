@@ -5,7 +5,7 @@
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">User editor</h4>
+                    <h4 class="card-title">Изменение пользователя</h4>
                 </div>
             </div>
             <div class="iq-card-body">
@@ -14,9 +14,9 @@
                         <table class="files-lists table table-striped mt-4">
                             <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">User</th>
-                                <th scope="col">Admin</th>
+                                <th scope="col">Имя</th>
+                                <th scope="col">Пользователь</th>
+                                <th scope="col">Админ</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,7 +29,6 @@
                                         <div>
                                             <label><input type="checkbox"
                                                           name="${role}" ${user.roles?seq_contains(role)?string("checked", "")} />
-<#--                                                ${role}-->
                                             </label>
                                         </div>
                                     </td>
@@ -40,24 +39,9 @@
                     </div>
                     <input type="hidden" value="${user.id}" name="userId"/>
                     <input type="hidden" value="${_csrf.token}" name="_csrf"/>
-                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
                 </form>
             </div>
         </div>
     </div>
-
-<#--    User editor-->
-
-<#--    <form action="/user" method="post">-->
-<#--        <input type="text" name="username" value="${user.username}"/>-->
-<#--        <#list roles as role>-->
-<#--            <div>-->
-<#--                <label><input type="checkbox"-->
-<#--                              name="${role}" ${user.roles?seq_contains(role)?string("checked", "")} />${role}</label>-->
-<#--            </div>-->
-<#--        </#list>-->
-<#--        <input type="hidden" value="${user.id}" name="userId"/>-->
-<#--        <input type="hidden" value="${_csrf.token}" name="_csrf"/>-->
-<#--        <button type="submit">Save</button>-->
-<#--    </form>-->
 </@c.page>

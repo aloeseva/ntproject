@@ -96,7 +96,7 @@
             </div>
             <div class="col-md-6 bg-white pt-5">
                 <div class="sign-in-from">
-                    <h1 class="mb-0">Sign Up</h1>
+                    <h1 class="mb-0">Вход</h1>
                     <#if Session?? && Session.SPRING_SECURITY_LAST_EXCEPTION??>
                         <div class="alert alert-danger" role="alert">
                             ${"Неверное имя пользователя или пароль"}

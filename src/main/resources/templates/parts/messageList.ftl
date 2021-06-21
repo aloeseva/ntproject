@@ -35,8 +35,8 @@
                                                             <div class="icon font-size-20"><i class="ri-save-line"></i>
                                                             </div>
                                                             <div class="data ml-2">
-                                                                <h6>Edit</h6>
-                                                                <p class="mb-0">Edit your post</p>
+                                                                <h6>Изменить</h6>
+                                                                <p class="mb-0">Измените пост</p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -48,7 +48,7 @@
                                                             </div>
                                                             <div class="data ml-2">
                                                                 <h6>Delete</h6>
-                                                                <p class="mb-0">Delete your post</p>
+                                                                <p class="mb-0">Удалите пост</p>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -77,10 +77,9 @@
                                             </div>
                                             <div class="total-like-block ml-2 mr-3">
                                                 <div class="dropdown">
-                                                <span class="dropdown-toggle" data-toggle="dropdown"
-                                                      aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${message.likes} Likes
-                                                </span>
+                                                    <h6>
+                                                        ${message.likes}
+                                                    </h6>
                                                 </div>
                                             </div>
 
@@ -95,23 +94,29 @@
                                             </div>
                                             <div class="total-like-block ml-2 mr-3">
                                                 <div class="dropdown">
-                                                <span class="dropdown-toggle" data-toggle="dropdown"
-                                                      aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${message.dislikes} dislikes
-                                                </span>
+                                                    <h6>
+                                                        ${message.dislikes}
+                                                    </h6>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="total-comment-block">
                                             <div class="like-data">
+                                                <a href="/messages/${message.id}/comment" title="Открыть комментарии">
+                                                    <i class="far fa-comment-alt"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="total-comment-block">
+                                            <div class="like-data">
                                                 <a href="/messages/${message.id}/comment">
-                                                    <h6 title="Открыть комментарии">
+                                                    <h6 title="Открыть комментарии" style="margin-left: 12px;">
                                                         <#list comments as comment>
                                                             <#if comment.id == message.id>
                                                                 <#if comment.exist>
-                                                                    ${comment.size} Comment
+                                                                    ${comment.size}
                                                                 <#else>
-                                                                    0 Comment
+                                                                    0
                                                                 </#if>
                                                             </#if>
                                                         </#list>
@@ -143,8 +148,7 @@
                                                                             </div>
                                                                             <div class="data ml-2">
                                                                                 <h6>Delete</h6>
-                                                                                <p class="mb-0">Delete your
-                                                                                    comment</p>
+                                                                                <p class="mb-0">Удалите комментарий</p>
                                                                             </div>
                                                                         </div>
                                                                     </a>
@@ -175,7 +179,7 @@
                                                                         <div class="dropdown">
                                                 <span class="dropdown-toggle" data-toggle="dropdown"
                                                       aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${com.likes} Likes
+                                                    ${com.likes}
                                                 </span>
                                                                         </div>
                                                                     </div>
@@ -193,12 +197,12 @@
                                                                         <div class="dropdown">
                                                 <span class="dropdown-toggle" data-toggle="dropdown"
                                                       aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${com.dislikes} dislikes
+                                                    ${com.dislikes}
                                                 </span>
                                                                         </div>
                                                                     </div>
+                                                                    <span> ${com.date} </span>
                                                                 </div>
-                                                                <span> ${com.date} </span>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -209,7 +213,7 @@
                                                 <li class="mb-2">
                                                     <div class="d-flex flex-wrap">
                                                         <div class="comment-data-block ml-3">
-                                                            <p class="mb-0">No comments</p>
+                                                            <p class="mb-0">Нет комментариев</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -266,7 +270,7 @@
                     <div class="iq-card-header d-flex justify-content-between"
                          style="justify-content: center !important;">
                         <div class="iq-header-title">
-                            <h4 class="card-title">No messages</h4>
+                            <h4 class="card-title">Нет сообщений</h4>
                         </div>
                     </div>
                 </div>
@@ -275,7 +279,7 @@
             <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">
                 <div class="iq-card-header d-flex justify-content-between" style="justify-content: center !important;">
                     <div class="iq-header-title">
-                        <h4 class="card-title">No messages</h4>
+                        <h4 class="card-title">Нет сообщений</h4>
                     </div>
                 </div>
             </div>

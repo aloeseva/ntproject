@@ -3,13 +3,13 @@
 <#macro login path isRegisterForm>
     <form class="mt-4" action="${path}" method="post">
         <div class="form-group">
-            <label for="exampleInputUsername">User Name :</label>
+            <label for="exampleInputUsername">Имя пользователя:</label>
             <input type="text"
                    name="username"
                    value="<#if user??>${user.username}</#if>"
                    class="form-control mb-0 ${(usernameError??)?string('is-invalid', '')}"
                    id="exampleInputUsername"
-                   placeholder="User name">
+                   placeholder="Имя пользователя">
             <#if usernameError??>
                 <div class="invalid-feedback">
                     ${usernameError}
@@ -17,12 +17,12 @@
             </#if>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password:</label>
+            <label for="exampleInputPassword1">Пароль:</label>
             <input type="password"
                    name="password"
                    class="form-control mb-0 ${(passwordError??)?string('is-invalid', '')}"
                    id="exampleInputPassword1"
-                   placeholder="Password">
+                   placeholder="Пароль">
             <#if passwordError??>
                 <div class="invalid-feedback">
                     ${passwordError}
@@ -31,12 +31,12 @@
         </div>
         <#if isRegisterForm>
             <div class="form-group">
-                <label for="exampleInputPassword2">Password:</label>
+                <label for="exampleInputPassword2">Пароль:</label>
                 <input type="password"
                        name="password2"
                        class="form-control mb-0 ${(password2Error??)?string('is-invalid', '')}"
                        id="exampleInputPassword2"
-                       placeholder="Retype password">
+                       placeholder="Повторите пароль">
                 <#if password2Error??>
                     <div class="invalid-feedback">
                         ${password2Error}

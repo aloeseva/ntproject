@@ -40,7 +40,7 @@
         <div class="row">
             <ul class="pagination pagination-sm offset-md-2" style="padding-left: 11px;">
                 <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" style="background-color: #202838; color: #50b5ff;">Элементов на странице</a>
+                    <a class="page-link" href="#" tabindex="-1" style="background-color: #202838; color: #50b5ff;">Сообщений на странице</a>
                 </li>
             <#list [5, 10, 25, 50] as c>
                 <#if c == page.getSize()>

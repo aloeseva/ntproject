@@ -8,24 +8,24 @@
                 <#if user??>
                     <li>
                         <a href="/" class="iq-waves-effect"><i
-                                    class="las la-newspaper"></i><span>Messages</span></a>
+                                    class="las la-newspaper"></i><span>Сообщения</span></a>
                     </li>
                 </#if>
                 <li>
-                    <a href="/top" class="iq-waves-effect"><i class="las la-hand-point-up"></i><span>Top messages</span></a>
+                    <a href="/top" class="iq-waves-effect"><i class="las la-hand-point-up"></i><span>Топ сообщений</span></a>
                 </li>
                 <#if user??>
                     <li>
                         <a href="/user-messages/${currentUserId}" class="iq-waves-effect"><i
-                                    class="las la-user"></i><span>Profile</span></a>
+                                    class="las la-user"></i><span>Моя страница</span></a>
                     </li>
                     <li>
                         <a href="/user/subscribers/${currentUserId}/list" class="iq-waves-effect"><i
-                                    class="las la-user-friends"></i><span>Friend Lists</span></a>
+                                    class="las la-user-friends"></i><span>Список друзей</span></a>
                     </li>
                     <li>
                         <a href="/user/list" class="iq-waves-effect"><i
-                                    class="las la-search"></i><span>Find users</span></a>
+                                    class="las la-search"></i><span>Поиск друзей</span></a>
                     </li>
                 </#if>
 

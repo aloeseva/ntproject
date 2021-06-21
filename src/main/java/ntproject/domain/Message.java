@@ -19,10 +19,10 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Please fill the message")
-    @Length(max = 2048, message = "Message too long (more than 2kB)")
+    @NotBlank(message = "Пожалуйста заполните сообщение")
+    @Length(max = 2048, message = "Сообщение слишком длинное (больше 2048 символов)")
     private String text;
-    @Length(max = 255, message = "Message too long (more than 255)")
+    @Length(max = 255, message = "Сообщение слишком длинное (больше 255 символов)")
     private String tag;
 
     @Column(name = "post_date")

@@ -25,12 +25,8 @@
                                                         <div class="user-data-block">
                                                             <a href="/user-messages/${user.id}"><h4
                                                                         class="">${user.getUsername()}</h4></a>
-                                                            <#--                                            <h4 class="">Anna Sthesia</h4>-->
-                                                            <#--                                            <h6>@designer</h6>-->
-                                                            <#--                                            <p>Lorem Ipsum is simply dummy text of the</p>-->
                                                         </div>
                                                     </div>
-<#--                                                    <button type="submit" class="btn btn-primary">Following</button>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -43,13 +39,4 @@
             </div>
         </div>
     </div>
-<#--    <h3>${userChannel.username}</h3>-->
-<#--    <div>${type}</div>-->
-<#--    <ul class="list-group">-->
-<#--        <#list users as user>-->
-<#--            <li class="list-group-item">-->
-<#--                <a href="/user-messages/${user.id}">${user.getUsername()}</a>-->
-<#--            </li>-->
-<#--        </#list>-->
-<#--    </ul>-->
 </@c.page>

@@ -16,14 +16,14 @@
         <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">Create Post</h4>
+                    <h4 class="card-title">Создать пост</h4>
                 </div>
             </div>
             <div class="iq-card-body" data-toggle="modal" data-target="#post-modal">
                 <div class="d-flex align-items-center">
                     <form class="post-text ml-3 w-100">
                         <input type="text" class="form-control rounded"
-                               placeholder="Write something here..." style="border:none;">
+                               placeholder="Нажмите здесь чтобы создать" style="border:none;">
                     </form>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="post-modalLabel">Create Post</h5>
+                            <h5 class="modal-title" id="post-modalLabel">Создать пост</h5>
                             <a class="btn btn-secondary" href="/user-messages/${currentUserId}" role="button">
                                 <i class="ri-close-fill"></i>
                             </a>
@@ -62,7 +62,7 @@
                                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                                 <input type="hidden" name="id" value="<#if message?? && !textError??>${message.id}</#if>"/>
                                 <br>
-                                <button type="submit" class="btn btn-primary d-block w-100 mt-3">Post</button>
+                                <button type="submit" class="btn btn-primary d-block w-100 mt-3">Опубликовать</button>
                             </form>
                         </div>
                     </div>

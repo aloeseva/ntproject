@@ -17,17 +17,17 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotBlank(message = "Username cannot be empty")
+    @NotBlank(message = "Имя пользователя не может быть пустым")
     private String username;
-    @NotBlank(message = "Password cannot be empty")
+    @NotBlank(message = "Пароль не может быть пустым")
     private String password;
     private boolean active;
 
     @Column(name = "registration_date")
     private Date registrationDate;
 
-    @Email(message = "Email is not correct")
-    @NotBlank(message = "Email cannot be empty")
+    @Email(message = "Email неверный")
+    @NotBlank(message = "Email не может быть пустым")
     private String email;
     private String activationCode;
 

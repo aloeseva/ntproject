@@ -22,7 +22,7 @@
             <#if isMessagePage>
                 <div class="iq-search-bar">
                     <form method="get" action="${path}" class="searchbox">
-                        <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Type here to search...">
+                        <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Поиск...">
                         <i class="search-link ri-search-line"></i>
                     </form>
                 </div>
@@ -64,7 +64,6 @@
                                 <div class="iq-card-body p-0 ">
                                     <div class="bg-primary p-3 line-height">
                                         <h5 class="mb-0 text-white line-height">${name}</h5>
-                                        <#--                                        <span class="text-white font-size-12">Available</span>-->
                                     </div>
                                     <#if user??>
                                         <a href="/user-messages/${currentUserId}"
@@ -74,8 +73,8 @@
                                                     <i class="ri-file-user-line"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">My Profile</h6>
-                                                    <p class="mb-0 font-size-12">View personal profile details.</p>
+                                                    <h6 class="mb-0 ">Мой профиль</h6>
+                                                    <p class="mb-0 font-size-12">Посмотреть личный профиль.</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -85,8 +84,8 @@
                                                     <i class="ri-profile-line"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Edit Profile</h6>
-                                                    <p class="mb-0 font-size-12">Modify your personal details.</p>
+                                                    <h6 class="mb-0 ">Изменить профиль</h6>
+                                                    <p class="mb-0 font-size-12">Измените детали профиля.</p>
                                                 </div>
                                             </div>
                                         </a>
@@ -97,8 +96,8 @@
                                                         <i class="ri-account-box-line"></i>
                                                     </div>
                                                     <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">User list</h6>
-                                                        <p class="mb-0 font-size-12">Panel for the administrator.</p>
+                                                        <h6 class="mb-0 ">Список пользователей</h6>
+                                                        <p class="mb-0 font-size-12">Панель для администратора.</p>
                                                     </div>
                                                 </div>
                                             </a>
@@ -107,8 +106,6 @@
 
                                     <div class="d-inline-block w-100 text-center p-3">
                                         <@l.logout />
-                                        <#--                                        <a class="bg-primary iq-sign-btn" href="sign-in.html" role="button">Sign out<i-->
-                                        <#--                                                    class="ri-login-box-line ml-2"></i></a>-->
                                     </div>
 
                                 </div>
@@ -121,51 +118,3 @@
     </div>
 </div>
 </#macro>
-<!-- TOP Nav Bar END -->
-
-<#--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
-<#--    <a class="navbar-brand" href="/">-->
-<#--        <img src="https://img.icons8.com/material/24/4a90e2/gorilla.png" width="35" height="35" alt="NTProject">-->
-<#--    </a>-->
-<#--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"-->
-<#--            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<#--        <span class="navbar-toggler-icon"></span>-->
-<#--    </button>-->
-
-<#--    <div class="collapse navbar-collapse" id="navbarNavDropdown">-->
-<#--        <ul class="navbar-nav mr-auto">-->
-<#--            <#if user??>-->
-<#--                <li class="nav-item">-->
-<#--                    <a class="nav-link" href="/main">Messages</a>-->
-<#--                </li>-->
-<#--                <li class="nav-item">-->
-<#--                    <a class="nav-link" href="/user-messages/${currentUserId}">My messages</a>-->
-<#--                </li>-->
-<#--            </#if>-->
-<#--        </ul>-->
-
-<#--        <ul class="navbar-nav ml-md-auto d-md-flex">-->
-<#--            <#if user??>-->
-<#--                <li class="nav-item dropdown">-->
-<#--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"-->
-<#--                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<#--                        ${name}-->
-<#--                    </a>-->
-<#--                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"-->
-<#--                         style="text-align: center;">-->
-<#--                        <#if isAdmin>-->
-<#--                            <a class="nav-link" href="/user" style="color: #6c757d">User list</a>-->
-<#--                        </#if>-->
-<#--                        <#if user??>-->
-<#--                            <a class="nav-link" href="/user/profile" style="color: #6c757d">Profile</a>-->
-<#--                        </#if>-->
-<#--                        <div role="separator" class="dropdown-divider"></div>-->
-<#--                        <@l.logout />-->
-<#--                    </div>-->
-<#--                </li>-->
-<#--            <#else>-->
-<#--                <@l.logout />-->
-<#--            </#if>-->
-<#--        </ul>-->
-<#--    </div>-->
-<#--</nav>-->

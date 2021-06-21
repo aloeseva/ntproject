@@ -111,7 +111,7 @@
                     <div class="title-on-header">
                         <div class="data-block">
                             <h2>${userChannel.username}</h2>
-                            <h4>${type}</h4>
+                            <h4><#if "${type}" == "subscriptions" >Подписки<#else>Подписчики</#if></h4>
                         </div>
                     </div>
                 </div>
@@ -130,13 +130,13 @@
                                     <li class="col-sm-6 p-0">
                                         <a class="nav-link <#if "${type}" != "subscriptions" > active</#if>"
                                            href="/user/subscribers/${userChannel.id}/list">
-                                            Followers
+                                            Подписчики
                                         </a>
                                     </li>
                                     <li class="col-sm-6 p-0">
                                         <a class="nav-link <#if "${type}" == "subscriptions" > active</#if>"
                                            href="/user/subscriptions/${userChannel.id}/list">
-                                            Following
+                                            Подписки
                                         </a>
                                     </li>
                                 </ul>

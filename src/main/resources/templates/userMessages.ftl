@@ -23,14 +23,14 @@
                         <div class="social-links">
                             <#if !isCurrentUser>
                                 <#if isSubscriber>
-                                    <a class="btn btn-info" href="/user/unsubscribe/${userChannel.id}">Unsubscribe</a>
+                                    <a class="btn btn-info" href="/user/unsubscribe/${userChannel.id}">Отписаться</a>
                                 <#else>
-                                    <a class="btn btn-info" href="/user/subscribe/${userChannel.id}">Subscribe</a>
+                                    <a class="btn btn-info" href="/user/subscribe/${userChannel.id}">Подписаться</a>
                                 </#if>
                             </#if>
                             <ul class="social-data-block d-flex align-items-center justify-content-between list-inline p-0 m-0">
                                 <li>
-                                    <i class="las la-calendar-alt"></i><span>${userChannel.date}</span></a>
+                                    <i class="far fa-calendar-alt"></i><span>${userChannel.date}</span></a>
                                 </li>
                             </ul>
                         </div>
@@ -39,7 +39,7 @@
                             <ul class="social-data-block d-flex align-items-center justify-content-between list-inline p-0 m-0">
                                 <#if userChannel.id == currentUserId>
                                     <li class="text-center pl-3">
-                                        <h6>Edit profile</h6>
+                                        <h6>Изменить</h6>
                                         <a href="/user/profile">
                                             <i class="ri-pencil-line">
                                             </i>
@@ -47,12 +47,12 @@
                                     </li>
                                 </#if>
                                 <li class="text-center pl-3">
-                                    <h6>Followers</h6>
+                                    <h6>Подписчики</h6>
                                     <a href="/user/subscribers/${userChannel.id}/list"><p
                                                 class="mb-0">${subscribersCount}</p></a>
                                 </li>
                                 <li class="text-center pl-3">
-                                    <h6>Following</h6>
+                                    <h6>Подписки</h6>
                                     <a href="/user/subscriptions/${userChannel.id}/list"><p
                                                 class="mb-0">${subscriptionsCount}</p></a>
                                 </li>

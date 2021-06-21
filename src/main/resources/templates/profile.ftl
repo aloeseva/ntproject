@@ -9,7 +9,7 @@
                     <div class="iq-card">
                         <div class="iq-card-header d-flex justify-content-between">
                             <div class="iq-header-title">
-                                <h4 class="card-title">Personal Information</h4>
+                                <h4 class="card-title">Личная информация</h4>
                             </div>
                         </div>
                         <div class="iq-card-body">
@@ -19,17 +19,16 @@
                                     <div class="col-md-12">
                                         <div class="profile-img-edit">
                                             <img class="profile-pic" src="/static/img/user.png" alt="profile-pic">
-                                            <div class="p-image">
-                                                <i class="ri-pencil-line upload-button"></i>
-<#--                                                <input class="file-upload" type="file" accept="image/*"/>-->
-                                            </div>
+<#--                                            <div class="p-image">-->
+<#--                                                <i class="ri-pencil-line upload-button"></i>-->
+<#--                                            </div>-->
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Password:</label>
+                                    <label class="col-sm-2 col-form-label">Пароль:</label>
                                     <div class="col-sm-6">
-                                        <input type="password" name="password" class="form-control" placeholder="Password" />
+                                        <input type="password" name="password" class="form-control" placeholder="Пароль" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -39,13 +38,13 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                                <button type="submit" class="btn btn-primary mr-2">Сохранить</button>
                             </form>
                             <hr>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Удалить профиль:</label>
                                 <div class="col-sm-6">
-                                    <a href="/user/delete/${currentUserId}" class="btn btn-outline-danger"><i class="ri-alert-line"></i> delete</a>
+                                    <a href="/user/delete/${currentUserId}" class="btn btn-outline-danger"><i class="ri-alert-line"></i> удалить</a>
                                 </div>
                             </div>
                         </div>

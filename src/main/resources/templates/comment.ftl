@@ -29,8 +29,8 @@
                                                     <div class="icon font-size-20"><i class="ri-save-line"></i>
                                                     </div>
                                                     <div class="data ml-2">
-                                                        <h6>Edit</h6>
-                                                        <p class="mb-0">Edit your post</p>
+                                                        <h6>Изменить</h6>
+                                                        <p class="mb-0">Изменить пост</p>
                                                     </div>
                                                 </div>
                                             </a>
@@ -59,10 +59,9 @@
                                     </div>
                                     <div class="total-like-block ml-2 mr-3">
                                         <div class="dropdown">
-                                                <span class="dropdown-toggle" data-toggle="dropdown"
-                                                      aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${message.likes} Likes
-                                                </span>
+                                            <h6>
+                                                ${message.likes}
+                                            </h6>
                                         </div>
                                     </div>
 
@@ -77,21 +76,27 @@
                                     </div>
                                     <div class="total-like-block ml-2 mr-3">
                                         <div class="dropdown">
-                                                <span class="dropdown-toggle" data-toggle="dropdown"
-                                                      aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${message.dislikes} dislikes
-                                                </span>
+                                            <h6>
+                                                ${message.dislikes}
+                                            </h6>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="total-comment-block">
                                     <div class="like-data">
                                         <a href="#">
-                                            <h6>
+                                            <i class="far fa-comment-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="total-comment-block">
+                                    <div class="like-data">
+                                        <a href="#">
+                                            <h6 style="margin-left: 12px;">
                                                 <#if isPage>
-                                                    ${message.size} Comment
+                                                    ${message.size}
                                                 <#else >
-                                                    0 Comment
+                                                    0
                                                 </#if>
                                             </h6>
                                         </a>
@@ -108,7 +113,7 @@
                             <input type="text"
                                    class="form-control rounded"
                                    name="text"
-                                   placeholder="Введите сообщение"/>
+                                   placeholder="Введите комментарий"/>
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         </form>
                     </div>
@@ -147,7 +152,7 @@
                                                     <div class="dropdown">
                                                 <span class="dropdown-toggle" data-toggle="dropdown"
                                                       aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${com.likes} Likes
+                                                    ${com.likes}
                                                 </span>
                                                     </div>
                                                 </div>
@@ -165,12 +170,12 @@
                                                     <div class="dropdown">
                                                 <span class="dropdown-toggle" data-toggle="dropdown"
                                                       aria-haspopup="true" aria-expanded="false" role="button">
-                                                    ${com.dislikes} dislikes
+                                                    ${com.dislikes}
                                                 </span>
                                                     </div>
                                                 </div>
+                                                <span> ${com.date} </span>
                                             </div>
-                                            <span> ${com.date} </span>
                                         </div>
                                     </div>
                                 </li>
@@ -180,7 +185,7 @@
                                 <li class="mb-2">
                                     <div class="d-flex flex-wrap">
                                         <div class="comment-data-block ml-3">
-                                            <p class="mb-0">No comments</p>
+                                            <p class="mb-0">Комментариев нет</p>
                                         </div>
                                     </div>
                                 </li>

@@ -19,8 +19,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message = "Please fill the message")
-    @Length(max = 2048, message = "Message too long (more than 2kB)")
+    @NotBlank(message = "Пожалуйста заполните сообщение")
+    @Length(max = 2048, message = "Сообщение слишком длинное (больше 2048 символов)")
     private String text;
 
     @Column(name = "post_date")

@@ -96,45 +96,12 @@
             </div>
             <div class="col-md-6 bg-white pt-5">
                 <div class="sign-in-from">
-                    <h1 class="mb-0">Sign in</h1>
+                    <h1 class="mb-0">Регистрация</h1>
                     <@l.login "/registration" true />
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Sign in END -->
-<#--<!-- Optional JavaScript &ndash;&gt;-->
-<#--<!-- jQuery first, then Popper.js, then Bootstrap JS &ndash;&gt;-->
-<#--<script src="/js/jquery.mi.js"></script>-->
-<#--<script src="/js/popper.mi.js"></script>-->
-<#--<script src="/js/bootstrap.mi.js"></script>-->
-<#--<!-- Appear JavaScript &ndash;&gt;-->
-<#--<script src="/js/jquery.appea.js"></script>-->
-<#--<!-- Countdown JavaScript &ndash;&gt;-->
-<#--<script src="/js/countdown.mi.js"></script>-->
-<#--<!-- Counterup JavaScript &ndash;&gt;-->
-<#--<script src="/js/waypoints.mi.js"></script>-->
-<#--<script src="/js/jquery.counterup.mi.js"></script>-->
-<#--<!-- Wow JavaScript &ndash;&gt;-->
-<#--<script src="/js/wow.mi.js"></script>-->
-<#--<!-- lottie JavaScript &ndash;&gt;-->
-<#--<script src="/js/lotti.js"></script>-->
-<#--<!-- Apexcharts JavaScript &ndash;&gt;-->
-<#--<script src="/js/apexchart.js"></script>-->
-<#--<!-- Slick JavaScript &ndash;&gt;-->
-<#--<script src="/js/slick.mi.js"></script>-->
-<#--<!-- Select2 JavaScript &ndash;&gt;-->
-<#--<script src="/js/select2.mi.js"></script>-->
-<#--<!-- Owl Carousel JavaScript &ndash;&gt;-->
-<#--<script src="/js/owl.carousel.mi.js"></script>-->
-<#--<!-- Magnific Popup JavaScript &ndash;&gt;-->
-<#--<script src="/js/jquery.magnific-popup.mi.js"></script>-->
-<#--<!-- Smooth Scrollbar JavaScript &ndash;&gt;-->
-<#--<script src="/js/smooth-scrollba.js"></script>-->
-<#--<!-- Chart Custom JavaScript &ndash;&gt;-->
-<#--<script src="/js/chart-custo.js"></script>-->
-<#--<!-- Custom JavaScript &ndash;&gt;-->
-<#--<script src="/js/custo.js"></script>-->
 </body>
 </html>

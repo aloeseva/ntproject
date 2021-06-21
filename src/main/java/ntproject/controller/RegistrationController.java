@@ -50,18 +50,18 @@ public class RegistrationController {
         CaptchaResponseDto response = restTemplate.postForObject(url, Collections.emptyList(), CaptchaResponseDto.class);
 
         if (response != null && !response.isSuccess()) {
-            model.addAttribute("captchaError", "Fill captcha");
+            model.addAttribute("captchaError", "Заполните captcha");
         }
 
         boolean isConfirmEmpty = StringUtils.isEmpty(passwordConfirm);
 
         if (isConfirmEmpty) {
-            model.addAttribute("password2Error", "Password confirmation cannot be empty");
+            model.addAttribute("password2Error", "Подтверждение пароля не может быть пустым");
         }
 
         boolean isConfirmPassword = true;
         if (user.getPassword() != null && !user.getPassword().equals(passwordConfirm)) {
-            model.addAttribute("passwordError", "Passwords are different!");
+            model.addAttribute("passwordError", "Пароли разные!");
             isConfirmPassword = false;
         }
 
@@ -74,7 +74,7 @@ public class RegistrationController {
         }
 
         if (!userSevice.addUser(user)) {
-            model.addAttribute("usernameError", "User exists!");
+            model.addAttribute("usernameError", "Пользователь существует!");
             return "registration";
         }
 
