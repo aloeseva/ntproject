@@ -253,7 +253,7 @@
                                            class="form-control ${(textError??)?string('is-invalid', '')} rounded"
                                            name="text"
                                            value="<#if comment??>${comment.text}</#if>"
-                                           placeholder="Введите сообщение"/>
+                                           placeholder="Введите комментарий..."/>
                                     <#if textError??>
                                         <div class="invalid-feedback">
                                             ${textError}

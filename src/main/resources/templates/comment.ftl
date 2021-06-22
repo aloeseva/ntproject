@@ -113,7 +113,7 @@
                             <input type="text"
                                    class="form-control rounded"
                                    name="text"
-                                   placeholder="Введите комментарий"/>
+                                   placeholder="Введите комментарий..."/>
                             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                         </form>
                     </div>
