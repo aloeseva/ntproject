@@ -6,7 +6,7 @@
             <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">
                 <div class="iq-card-header d-flex justify-content-between" style="justify-content: center !important;">
                     <div class="iq-header-title">
-                        <h4 class="card-title">Вы можете найти здесь новых людей</h4>
+                        <h4 class="card-title">Вы можете найти здесь новых друзей</h4>
                     </div>
                 </div>
             </div>
