@@ -60,7 +60,7 @@
                             </div>
                             <div class="mt-3">
                                 <p>${message.text}</p>
-                                <i>#${message.tag}</i>
+                                <i class="ri-hashtag"></i><span>${message.tag}</span>
                             </div>
                             <div class="comment-area mt-3">
                                 <div class="d-flex justify-content-between align-items-center">

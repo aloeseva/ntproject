@@ -38,7 +38,7 @@
                             </a>
                         </div>
                         <div class="modal-body">
-                            <form method="post" enctype="multipart/form-data">
+                            <form method="post" <#if !message??>action="/"</#if>enctype="multipart/form-data">
                                 <div class="form-group">
                                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                                            value="<#if message??>${message.text}</#if>" name="text"
@@ -50,6 +50,7 @@
                                     </#if>
                                 </div>
                                 <div class="form-group">
+                                    <i class="fa ri-hashtag" aria-hidden="true"></i>
                                     <input type="text" class="form-control"
                                            value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг"/>
                                     <#if tagError??>

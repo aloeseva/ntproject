@@ -79,7 +79,9 @@ public class MessageController {
             BindingResult bindingResult,
             Model model,
             @RequestParam(required = false, defaultValue = "") String filter,
-            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable,
+            RedirectAttributes redirectAttributes,
+            @RequestHeader(required = false) String referer
     ) throws IOException {
         message.setAuthor(user);
 
@@ -111,7 +113,12 @@ public class MessageController {
         model.addAttribute("isPage", true);
         model.addAttribute("page", page);
 
-        return "main";
+        UriComponents components = UriComponentsBuilder.fromHttpUrl(referer).build();
+
+        components.getQueryParams()
+                .forEach(redirectAttributes::addAttribute);
+
+        return "redirect:" + components.getPath();
     }
 
     private void comments(@AuthenticationPrincipal User user, List<MessageComment> comments, MessageDto m) {

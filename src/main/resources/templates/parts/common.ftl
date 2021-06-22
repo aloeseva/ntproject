@@ -94,6 +94,23 @@
                 background-color: navy;
             }
         </style>
+        <style>
+            i.fa {
+                width: 26px;
+                height: 26px;
+                line-height: 26px;
+                text-align: center;
+                margin-right: -26px;
+                position: relative;
+                z-index: 1;
+                float: left;
+                margin-top: 10px;
+            }
+
+            i.fa + input {
+                padding-left: 26px;
+            }
+        </style>
     </head>
 
     <body class="right-column-fixed">
