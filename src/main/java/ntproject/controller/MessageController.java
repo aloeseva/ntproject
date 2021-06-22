@@ -304,7 +304,7 @@ public class MessageController {
             @RequestParam("tag") String tag
     ) {
 
-        if (message.getAuthor().equals(currentUser)) {
+        if (message.getAuthor().equals(currentUser) || currentUser.isAdmin()) {
             if (!StringUtils.isEmpty(text)) {
                 message.setText(text);
             }

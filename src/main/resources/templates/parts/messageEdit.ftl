@@ -33,12 +33,12 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="post-modalLabel">Создать пост</h5>
-                            <a class="btn btn-secondary" href="/user-messages/${currentUserId}" role="button">
+                            <a class="btn btn-secondary" <#if userChannel??>href="/user-messages/${userChannel.id}"<#else>href="/"</#if> role="button">
                                 <i class="ri-close-fill"></i>
                             </a>
                         </div>
                         <div class="modal-body">
-                            <form method="post" <#if !message??> action="/" </#if> enctype="multipart/form-data">
+                            <form method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
                                            value="<#if message??>${message.text}</#if>" name="text"

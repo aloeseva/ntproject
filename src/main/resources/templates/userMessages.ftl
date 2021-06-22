@@ -68,5 +68,9 @@
         <#include "parts/messageEdit.ftl" />
     </#if>
 
+    <#if isAdmin && message??>
+        <#include "parts/messageEdit.ftl" />
+    </#if>
+
     <#include "parts/messageList.ftl" />
 </@c.page>
