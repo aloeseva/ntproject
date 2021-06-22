@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#include "parts/security.ftl">
 
-<@c.page "/" false false>
+<@c.page "/" false false false>
 
     <div class="col-lg-8 offset-lg-2">
         <div class=" col-sm-12">
@@ -67,7 +67,9 @@
                                 </div>
                                 <div class="mt-3">
                                     <p>${message.text}</p>
+                                    <#if "${message.tag}" != "">
                                     <i class="ri-hashtag"></i><span>${message.tag}</span>
+                                    </#if>
                                 </div>
                                 <div class="comment-area mt-3">
                                     <div class="d-flex justify-content-between align-items-center">

@@ -2,7 +2,7 @@
 <#import "login.ftl" as l>
 
 <!-- TOP Nav Bar -->
-<#macro navbar path isMessagePage>
+<#macro navbar path isMessagePage isUserPage>
 <div class="iq-top-navbar">
     <div class="iq-navbar-custom">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -20,6 +20,14 @@
                 </div>
             </div>
             <#if isMessagePage>
+                <div class="iq-search-bar">
+                    <form method="get" action="${path}" class="searchbox">
+                        <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Поиск по тегу...">
+                        <i class="search-link ri-search-line"></i>
+                    </form>
+                </div>
+            </#if>
+            <#if isUserPage>
                 <div class="iq-search-bar">
                     <form method="get" action="${path}" class="searchbox">
                         <input type="text" name="filter" class="text search-input" value="${filter!}" placeholder="Поиск...">

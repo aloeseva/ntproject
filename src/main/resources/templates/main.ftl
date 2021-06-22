@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#include "parts/security.ftl">
 
-<@c.page "/" true false>
+<@c.page "/" true false false>
     <#if user??>
         <#include "parts/messageEdit.ftl" />
     </#if>

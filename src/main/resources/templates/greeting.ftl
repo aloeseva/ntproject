@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#include "parts/security.ftl">
 
-<@c.page "#" false false>
+<@c.page "#" false false false>
     <h5>Hello, ${name}</h5>
     <br>
     <div>

@@ -2,7 +2,7 @@
 <#include "parts/security.ftl">
 <#import "parts/pager.ftl" as p>
 
-<@c.page "/" false false>
+<@c.page "/" false false false>
     <div class="col-lg-8 offset-lg-2">
         <div class=" col-sm-12">
             <div class="iq-card iq-card-block iq-card-stretch iq-card-height" data-id="${message.id}">
@@ -42,7 +42,9 @@
                     </div>
                     <div class="mt-3">
                         <p>${message.text}</p>
-                        <i class="ri-hashtag"></i><span>${message.tag}</span>
+                        <#if "${message.tag}" != "">
+                            <i class="ri-hashtag"></i><span>${message.tag}</span>
+                        </#if>
                     </div>
                     <div class="comment-area mt-3">
                         <div class="d-flex justify-content-between align-items-center">

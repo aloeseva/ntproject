@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page "#" false true>
+<@c.page "#" false true false>
     <div class="wrapper">
         <div id="content-page" class="content-page">
             <div class="container">

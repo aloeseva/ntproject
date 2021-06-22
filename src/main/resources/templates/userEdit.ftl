@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page "#" false false>
+<@c.page "#" false false false>
     <div class="col-sm-12">
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">

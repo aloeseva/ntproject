@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as c>
 <#include "parts/security.ftl">
 
-<@c.page "#" false false>
+<@c.page "#" false false false>
     <div class="col-lg-12">
         <div class="iq-edit-list-data">
             <div class="tab-content">

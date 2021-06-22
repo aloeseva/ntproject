@@ -1,6 +1,6 @@
 <#import "navbar.ftl" as n>
 
-<#macro page path isMessagePage friendPage>
+<#macro page path isMessagePage friendPage isUserPage>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -118,7 +118,7 @@
         <div id="loading-center">
         </div>
     </div>
-    <@n.navbar path isMessagePage />
+    <@n.navbar path isMessagePage isUserPage/>
     <#include "sidebar.ftl">
     <#if friendPage && !isMessagePage>
         <div class="col-lg-8 offset-lg-2">
@@ -165,7 +165,7 @@
         </div>
     </#if>
 
-    <#if friendPage && isMessagePage>
+    <#if friendPage && isUserPage>
         <div class="col-lg-8 offset-lg-2">
             <div class="header-for-bg">
                 <div class="background-header position-relative">

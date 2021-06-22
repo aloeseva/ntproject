@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
-<@c.page "#" true false>
+<@c.page "#" false false true>
     <div class="col-lg-8 offset-lg-2">
         <div class=" col-sm-12">
             <div id="post-modal-data" class="iq-card iq-card-block iq-card-stretch iq-card-height">
