@@ -1,5 +1,6 @@
 <#include "security.ftl">
 <#if message??>
+    <script src="/static/js/wow.mi.js"></script>
     <script>
         $(document).ready(function () {
             //this is just to verify that click works

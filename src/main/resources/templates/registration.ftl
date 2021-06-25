@@ -39,30 +39,30 @@
     <script src="/static/js/popper.mi.js"></script>
     <script src="/static/js/bootstrap.mi.js"></script>
     <!-- Appear JavaScript -->
-    <script src="/static/js/jquery.appea.js"></script>
+<#--    <script src="/static/js/jquery.appea.js"></script>-->
     <!-- Countdown JavaScript -->
-    <script src="/static/js/countdown.mi.js"></script>
+<#--    <script src="/static/js/countdown.mi.js"></script>-->
     <!-- Counterup JavaScript -->
-    <script src="/static/js/waypoints.mi.js"></script>
-    <script src="/static/js/jquery.counterup.mi.js"></script>
+<#--    <script src="/static/js/waypoints.mi.js"></script>-->
+<#--    <script src="/static/js/jquery.counterup.mi.js"></script>-->
     <!-- Wow JavaScript -->
-    <script src="/static/js/wow.mi.js"></script>
+<#--    <script src="/static/js/wow.mi.js"></script>-->
     <!-- lottie JavaScript -->
-    <script src="/static/js/lotti.js"></script>
+<#--    <script src="/static/js/lotti.js"></script>-->
     <!-- Apexcharts JavaScript -->
-    <script src="/static/js/apexchart.js"></script>
+<#--    <script src="/static/js/apexchart.js"></script>-->
     <!-- Slick JavaScript -->
-    <script src="/static/js/slick.mi.js"></script>
+<#--    <script src="/static/js/slick.mi.js"></script>-->
     <!-- Select2 JavaScript -->
-    <script src="/static/js/select2.mi.js"></script>
+<#--    <script src="/static/js/select2.mi.js"></script>-->
     <!-- Owl Carousel JavaScript -->
-    <script src="/static/js/owl.carousel.mi.js"></script>
+<#--    <script src="/static/js/owl.carousel.mi.js"></script>-->
     <!-- Magnific Popup JavaScript -->
     <script src="/static/js/jquery.magnific-popup.mi.js"></script>
     <!-- Smooth Scrollbar JavaScript -->
-    <script src="/static/js/smooth-scrollba.js"></script>
+<#--    <script src="/static/js/smooth-scrollba.js"></script>-->
     <!-- Chart Custom JavaScript -->
-    <script src="/static/js/chart-custo.js"></script>
+<#--    <script src="/static/js/chart-custo.js"></script>-->
     <!-- Custom JavaScript -->
     <script src="/static/js/custo.js"></script>
 </head>
